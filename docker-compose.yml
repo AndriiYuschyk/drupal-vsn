@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # Основний Drupal сайт
+  drupal:
+    image: drupal:11-php8.3-apache
+    container_name: drupal_main
+    ports:
+      - "8080:80"  # http://localhost:8080
+    volumes:
+      - drupal_data:/var/www/html
+      - ./files:/var/www/html/sites/default/files  # Файли на хості
+    environment:
+      DRUPAL_DATABASE_HOST: database
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USER: drupaluser
+      DRUPAL_DATABASE_PASSWORD: drupalpassword
+    depends_on:
+      - database
+    networks:
+      - drupal-network
+
+  # База даних MySQL/MariaDB
+  database:
+    image: mariadb:10.6
+    container_name: mariadb_main
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupaluser
+      MYSQL_PASSWORD: drupalpassword
+    networks:
+      - drupal-network
+
+  # phpMyAdmin для управління БД
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: database
+      PMA_USER: drupaluser
+      PMA_PASSWORD: drupalpassword
+    ports:
+      - "8081:80"  # http://localhost:8081
+    depends_on:
+      - database
+    networks:
+      - drupal-network
+
+  # MailHog для тестування пошти
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"  # http://localhost:8025
+    networks:
+      - drupal-network
+
+networks:
+  drupal-network:
+    driver: bridge
+
+volumes:
+  drupal_data:    # Код Drupal (керується Docker)
+  db_data:        # База даних (керується Docker)

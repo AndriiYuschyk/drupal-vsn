@@ -1,0 +1,31 @@
+# Контентні файли (не зберігаємо в Git)
+/files/
+/backups/
+
+# Docker volumes data
+/docroot/
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
+# Node modules (якщо використовуєш)
+node_modules/

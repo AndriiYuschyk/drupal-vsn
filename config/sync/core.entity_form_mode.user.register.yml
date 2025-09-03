@@ -1,0 +1,13 @@
+uuid: 617ed9d7-93b9-4b3d-b448-7b5a3e2bcd3a
+langcode: uk
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: 1TFiplNN7Wmj_DtVLLLP-NLPYpZJdAswKY-vTrYgFyo
+id: user.register
+label: Реєстрація
+description: null
+targetEntityType: user
+cache: true

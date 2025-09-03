@@ -1,0 +1,10 @@
+uuid: 4c615f85-11e1-4eaf-9de7-331210656589
+langcode: uk
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: q7pDV2d9qFh1IVqvymOxUUYGSziZDeg961wURC0cSLs
+id: medium
+label: 'Базова середня дата'
+locked: false
+pattern: 'D, j M Y - H:i'

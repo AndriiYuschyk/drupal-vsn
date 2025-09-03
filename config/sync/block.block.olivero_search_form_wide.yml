@@ -1,0 +1,23 @@
+uuid: c1461779-1df7-475e-aa45-0a70d044c07a
+langcode: uk
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - olivero
+_core:
+  default_config_hash: pbbed0hdqGDF-_QWVVTWRAwgDIotFuAvWH5mWUZu0fA
+id: olivero_search_form_wide
+theme: olivero
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Форма пошуку (широка)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

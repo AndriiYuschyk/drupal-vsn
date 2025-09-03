@@ -1,0 +1,11 @@
+uuid: 2e0e1d1e-c620-43ac-97b8-8cd95d344f3b
+langcode: uk
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: iTEzwrEQ_4JIb-OYGiqzyF2TmMgWyWayresXcWgwGWM
+name: Теґи
+vid: tags
+description: 'Теґи використовуються для групування статей зі схожими темами в категорії.'
+weight: 0
+new_revision: false

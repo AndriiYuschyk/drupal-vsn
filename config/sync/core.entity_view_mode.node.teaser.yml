@@ -1,0 +1,13 @@
+uuid: 663af685-a0fd-44d0-89e9-0476c7295642
+langcode: uk
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: KgGJDZFpMaz_8bTv6fN1bXS3Qi5LWmRJI9R53kEGsNQ
+id: node.teaser
+label: Анонс
+description: ''
+targetEntityType: node
+cache: true

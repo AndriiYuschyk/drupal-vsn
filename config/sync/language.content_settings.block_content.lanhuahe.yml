@@ -1,0 +1,11 @@
+uuid: 67baa88a-a47a-41d6-a2d7-6901df201b7e
+langcode: uk
+status: true
+dependencies:
+  config:
+    - block_content.type.lanhuahe
+id: block_content.lanhuahe
+target_entity_type_id: block_content
+target_bundle: lanhuahe
+default_langcode: site_default
+language_alterable: false
