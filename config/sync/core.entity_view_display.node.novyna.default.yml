@@ -1,0 +1,76 @@
+uuid: 1e7f1d42-2858-4637-8d78-21aae9fd175b
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.field.node.novyna.field_holovne_zobrazhennya
+    - field.field.node.novyna.field_katehoriya_novyny
+    - field.field.node.novyna.field_korotkyy_opys
+    - field.field.node.novyna.field_opys
+    - field.field.node.novyna.field_teg_y_novyn
+    - field.field.node.novyna.field_zaholovok
+    - node.type.novyna
+  module:
+    - image
+    - text
+    - user
+id: node.novyna.default
+targetEntityType: node
+bundle: novyna
+mode: default
+content:
+  field_holovne_zobrazhennya:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_katehoriya_novyny:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_korotkyy_opys:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_opys:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_teg_y_novyn:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_zaholovok:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,11 @@
+uuid: f0a8a960-dd0e-4023-a86e-a12b3f1b1cc0
+langcode: uk
+status: true
+dependencies:
+  config:
+    - node.type.novyna
+id: node.novyna
+target_entity_type_id: node
+target_bundle: novyna
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,29 @@
+uuid: 0aa94aaf-a905-455c-bf72-4eba8d344309
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_katehoriya_novyny
+    - node.type.novyna
+    - taxonomy.vocabulary.katehoriyi_novyn
+id: node.novyna.field_katehoriya_novyny
+field_name: field_katehoriya_novyny
+entity_type: node
+bundle: novyna
+label: 'Категорія новини'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      katehoriyi_novyn: katehoriyi_novyn
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

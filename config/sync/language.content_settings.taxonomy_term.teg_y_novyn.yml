@@ -1,0 +1,11 @@
+uuid: fc05a020-8d16-43f5-bc32-4bc8564d65c9
+langcode: uk
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.teg_y_novyn
+id: taxonomy_term.teg_y_novyn
+target_entity_type_id: taxonomy_term
+target_bundle: teg_y_novyn
+default_langcode: site_default
+language_alterable: false

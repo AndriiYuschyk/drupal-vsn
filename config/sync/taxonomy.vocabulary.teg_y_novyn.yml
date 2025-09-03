@@ -1,0 +1,9 @@
+uuid: be36db76-5b69-4420-bef6-da2e7e938463
+langcode: uk
+status: true
+dependencies: {  }
+name: 'Теґи новин'
+vid: teg_y_novyn
+description: 'Теґи використовуються для групування новин зі схожими темами в категорії.'
+weight: -9
+new_revision: false

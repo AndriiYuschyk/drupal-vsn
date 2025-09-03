@@ -1,0 +1,9 @@
+uuid: 83c5f833-1a24-4183-8c9f-64e74ca0c69c
+langcode: uk
+status: true
+dependencies: {  }
+name: 'Категорії новин'
+vid: katehoriyi_novyn
+description: 'Категорії використовуються для групування новин за схожою тематикою.'
+weight: -10
+new_revision: false

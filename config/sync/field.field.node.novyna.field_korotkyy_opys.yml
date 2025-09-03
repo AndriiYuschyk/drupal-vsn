@@ -1,0 +1,22 @@
+uuid: 20beef6d-b82b-4a51-8f59-743d2b9f2dc9
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_korotkyy_opys
+    - node.type.novyna
+  module:
+    - text
+id: node.novyna.field_korotkyy_opys
+field_name: field_korotkyy_opys
+entity_type: node
+bundle: novyna
+label: 'Короткий опис'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,11 @@
+uuid: cc52d940-daab-4c87-914b-0d101c078f4e
+langcode: uk
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.katehoriyi_novyn
+id: taxonomy_term.katehoriyi_novyn
+target_entity_type_id: taxonomy_term
+target_bundle: katehoriyi_novyn
+default_langcode: site_default
+language_alterable: false

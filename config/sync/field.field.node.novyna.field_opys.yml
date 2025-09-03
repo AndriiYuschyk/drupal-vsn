@@ -1,0 +1,24 @@
+uuid: b8dd1efe-9641-4752-8057-902fc4f48986
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_opys
+    - node.type.novyna
+  module:
+    - text
+id: node.novyna.field_opys
+field_name: field_opys
+entity_type: node
+bundle: novyna
+label: Опис
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

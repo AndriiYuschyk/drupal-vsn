@@ -1,0 +1,20 @@
+uuid: 61603978-5085-4343-9d22-9d7370a2ea95
+langcode: uk
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_teg_y_novyn
+field_name: field_teg_y_novyn
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
