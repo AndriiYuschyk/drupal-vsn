@@ -1,0 +1,8 @@
+services:
+  ukraine_air_alerts.api_client:
+    class: Drupal\ukraine_air_alerts\Service\AlertsApiClient
+    arguments: ['@http_client', '@cache.default', '@logger.channel.ukraine_air_alerts']
+
+  logger.channel.ukraine_air_alerts:
+    parent: logger.channel_base
+    arguments: ['ukraine_air_alerts']

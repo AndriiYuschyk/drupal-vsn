@@ -1,0 +1,4 @@
+administer ukraine air alerts:
+  title: 'Administer Ukraine Air Alerts'
+  description: 'Configure Ukraine Air Alerts module settings'
+  restrict access: TRUE

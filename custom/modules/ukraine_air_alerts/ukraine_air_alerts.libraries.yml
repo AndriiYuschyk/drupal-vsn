@@ -1,0 +1,10 @@
+map:
+  version: 1.0
+  css:
+    theme:
+      css/ukraine-air-alerts.css: {}
+  js:
+    js/ukraine-air-alerts.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains ukraine_air_alerts.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ukraine_air_alerts_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        // Main module help for the ukraine_air_alerts module.
+        case 'help.page.ukraine_air_alerts':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Відображає карту повітряних тривог в Україні з використанням API alerts.in.ua') . '</p>';
+            $output .= '<h3>' . t('Uses') . '</h3>';
+            $output .= '<dl>';
+            $output .= '<dt>' . t('Map Display') . '</dt>';
+            $output .= '<dd>' . t('Створює інтерактивну карту України з візуалізацією поточних повітряних тривог.') . '</dd>';
+            $output .= '<dt>' . t('Block Integration') . '</dt>';
+            $output .= '<dd>' . t('Надає блок який можна розмістити на будь-якій сторінці сайту.') . '</dd>';
+            $output .= '<dt>' . t('API Integration') . '</dt>';
+            $output .= '<dd>' . t('Інтегрується з API alerts.in.ua для отримання актуальних даних.') . '</dd>';
+            $output .= '</dl>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ukraine_air_alerts_theme() {
+    return [
+        'ukraine_air_alerts_map' => [
+            'variables' => [
+                'alerts' => [],
+                'settings' => [],
+            ],
+            'template' => 'ukraine-air-alerts-map',
+        ],
+    ];
+}

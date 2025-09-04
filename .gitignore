@@ -1,31 +1,46 @@
-# Контентні файли (не зберігаємо в Git)
-/files/
-/backups/
+# Drupal files
+/docroot/sites/*/files
+/docroot/sites/*/private
+/docroot/sites/*/translations
+/docroot/sites/*/settings.local.php
+/docroot/sites/*/services*.yml
 
-# Docker volumes data
+# Drupal core (якщо не потрібен в Git)
+/docroot/core
+/docroot/modules/contrib
+/docroot/themes/contrib
+/docroot/profiles/contrib
+/docroot/libraries
+/docroot/vendor
+
+# Composer
+/vendor/
+composer.lock
+
+# Docker volumes data (не зберігаємо в Git)
 /docroot/
+/db-data/
 
-# Environment files
-.env
-.env.local
-
-# IDE files
+# IDE/Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
 # OS files
 .DS_Store
 Thumbs.db
 
+# Environment files
+.env
+.env.local
+
 # Logs
 *.log
-logs/
+/logs/
 
-# Temporary files
-tmp/
-temp/
-
-# Node modules (якщо використовуєш)
-node_modules/
+# Backup files
+*.sql
+*.tar.gz
+backup/
