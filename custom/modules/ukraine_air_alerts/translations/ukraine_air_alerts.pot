@@ -1,0 +1,99 @@
+# Translation template for Drupal (ukraine_air_alerts)
+# Copyright 2025
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ukraine_air_alerts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-06 00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/ukraine-air-alerts-map.html.twig
+msgid "Air Raid Alerts in Ukraine"
+msgstr ""
+
+#: templates/ukraine-air-alerts-map.html.twig
+msgid "Last updated:"
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "Loading..."
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "No Alert"
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "Partial Alert"
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "Full Alert"
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "Connected"
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "Connection Error"
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "Next update in:"
+msgstr ""
+
+#: js/ukraine_air_alerts.js
+msgid "Full Alert Active"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Ukraine Air Alerts Settings"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "API URL"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Enter the API endpoint URL for air raid alerts data"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Refresh Interval"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "How often to refresh the data (in seconds)"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Show Legend"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Display the color legend on the map"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Show Status"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Display connection status and refresh timer"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Compact Mode"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Use compact layout for smaller spaces"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "sec"
+msgstr ""

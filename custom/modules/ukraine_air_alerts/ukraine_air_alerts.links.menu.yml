@@ -1,0 +1,5 @@
+ukraine_air_alerts.settings:
+  title: 'Ukraine Air Alerts'
+  description: 'Configure Ukraine Air Alerts map settings'
+  parent: system.admin_config_system
+  route_name: ukraine_air_alerts.settings

@@ -1,4 +1,4 @@
-name: 'Ukraine Air Alerts'
+name: 'Ukraine Air Alerts Map'
 type: module
 description: 'Відображає карту повітряних тривог в Україні з використанням API alerts.in.ua'
 core_version_requirement: ^10 || ^11
@@ -6,4 +6,8 @@ package: Custom
 
 dependencies:
   - drupal:system
-  - drupal:block
+  - drupal:locale
+  - drupal:language
+
+interface translation project: ukraine_air_alerts
+interface translation server pattern: translations/%language.po

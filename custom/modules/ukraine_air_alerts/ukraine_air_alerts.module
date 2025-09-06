@@ -2,9 +2,10 @@
 
 /**
  * @file
- * Contains ukraine_air_alerts.module.
+ * Ukraine Air Alerts module with translation support.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -12,37 +13,118 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function ukraine_air_alerts_help($route_name, RouteMatchInterface $route_match) {
     switch ($route_name) {
-        // Main module help for the ukraine_air_alerts module.
         case 'help.page.ukraine_air_alerts':
-            $output = '';
-            $output .= '<h3>' . t('About') . '</h3>';
-            $output .= '<p>' . t('Відображає карту повітряних тривог в Україні з використанням API alerts.in.ua') . '</p>';
-            $output .= '<h3>' . t('Uses') . '</h3>';
-            $output .= '<dl>';
-            $output .= '<dt>' . t('Map Display') . '</dt>';
-            $output .= '<dd>' . t('Створює інтерактивну карту України з візуалізацією поточних повітряних тривог.') . '</dd>';
-            $output .= '<dt>' . t('Block Integration') . '</dt>';
-            $output .= '<dd>' . t('Надає блок який можна розмістити на будь-якій сторінці сайту.') . '</dd>';
-            $output .= '<dt>' . t('API Integration') . '</dt>';
-            $output .= '<dd>' . t('Інтегрується з API alerts.in.ua для отримання актуальних даних.') . '</dd>';
-            $output .= '</dl>';
-            return $output;
-
-        default:
+            return '<p>' . t('This module displays real-time air raid alerts for Ukrainian regions on an interactive map.') . '</p>';
     }
 }
 
 /**
  * Implements hook_theme().
  */
-function ukraine_air_alerts_theme() {
+function ukraine_air_alerts_theme($existing, $type, $theme, $path) {
     return [
         'ukraine_air_alerts_map' => [
             'variables' => [
-                'alerts' => [],
-                'settings' => [],
+                'compact_mode' => FALSE,
+                'show_legend' => TRUE,
+                'show_status' => TRUE,
+                'api_url' => '',
+                'refresh_interval' => 60000,
             ],
             'template' => 'ukraine-air-alerts-map',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function ukraine_air_alerts_page_attachments(array &$attachments) {
+    $attachments['#attached']['drupalSettings']['ukraineAirAlerts'] = [
+        'apiUrl' => '/ukraine-alerts/api',
+        'refreshInterval' => 60000,
+        'translations' => [
+            'title' => t('Air Raid Alerts in Ukraine'),
+            'lastUpdated' => t('Last updated:'),
+            'loading' => t('Loading...'),
+            'noAlert' => t('No Alert'),
+            'partialAlert' => t('Partial Alert'),
+            'fullAlert' => t('Full Alert'),
+            'connected' => t('Connected'),
+            'connectionError' => t('Connection Error'),
+            'nextUpdate' => t('Next update in:'),
+        ],
+    ];
+}
+
+/**
+ * Implements hook_library_info_build().
+ */
+function ukraine_air_alerts_library_info_build() {
+    $libraries = [];
+
+    $libraries['ukraine_air_alerts'] = [
+        'js' => [
+            'js/ukraine-air-alerts.js' => [
+                'attributes' => [
+                    'defer' => TRUE,
+                ],
+            ],
+        ],
+        'css' => [
+            'theme' => [
+                'css/ukraine-air-alerts.css' => [
+                    'media' => 'all',
+                ],
+            ],
+        ],
+        'dependencies' => [
+            'core/jquery',
+            'core/drupal',
+            'core/drupalSettings',
+            'core/once',
+        ],
+    ];
+
+    return $libraries;
+}
+
+/**
+ * Preprocess function for ukraine_air_alerts_map theme.
+ */
+function template_preprocess_ukraine_air_alerts_map(&$variables) {
+    // Додаємо переклади до змінних шаблону
+    $variables['translations'] = [
+        'title' => t('Air Raid Alerts in Ukraine'),
+        'lastUpdated' => t('Last updated:'),
+        'loading' => t('Loading...'),
+        'noAlert' => t('No Alert'),
+        'partialAlert' => t('Partial Alert'),
+        'fullAlert' => t('Full Alert'),
+        'connected' => t('Connected'),
+        'nextUpdate' => t('Next update in:'),
+    ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ukraine_air_alerts_form_language_admin_overview_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    // Додаємо інформацію про модуль до форми управління мовами
+    if (isset($form['languages'])) {
+        $form['#attached']['library'][] = 'ukraine_air_alerts/ukraine_air_alerts';
+    }
+}
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function ukraine_air_alerts_locale_translation_projects_alter(&$projects) {
+    $projects['ukraine_air_alerts'] = [
+        'name' => 'Ukraine Air Alerts',
+        'info' => [
+            'name' => 'Ukraine Air Alerts',
+            'interface translation server pattern' => 'translations/%language.po',
         ],
     ];
 }

@@ -1,0 +1,76 @@
+# English translation of Drupal (ukraine_air_alerts)
+# Copyright 2025
+  #
+  msgid ""
+  msgstr ""
+  "Project-Id-Version: ukraine_air_alerts\n"
+  "Language: en\n"
+  "MIME-Version: 1.0\n"
+  "Content-Type: text/plain; charset=UTF-8\n"
+  "Content-Transfer-Encoding: 8bit\n"
+
+  msgid "Air Raid Alerts in Ukraine"
+  msgstr "Air Raid Alerts in Ukraine"
+  
+  msgid "Last updated:"
+  msgstr "Last updated:"
+  
+  msgid "Loading..."
+  msgstr "Loading..."
+  
+  msgid "No Alert"
+  msgstr "No Alert"
+  
+  msgid "Partial Alert"
+  msgstr "Partial Alert"
+  
+  msgid "Full Alert"
+  msgstr "Full Alert"
+  
+  msgid "Connected"
+  msgstr "Connected"
+  
+  msgid "Connection Error"
+  msgstr "Connection Error"
+  
+  msgid "Next update in:"
+  msgstr "Next update in:"
+  
+  msgid "Full Alert Active"
+  msgstr "Full Alert Active"
+  
+  msgid "Ukraine Air Alerts Settings"
+  msgstr "Ukraine Air Alerts Settings"
+  
+  msgid "API URL"
+  msgstr "API URL"
+  
+  msgid "Enter the API endpoint URL for air raid alerts data"
+  msgstr "Enter the API endpoint URL for air raid alerts data"
+  
+  msgid "Refresh Interval"
+  msgstr "Refresh Interval"
+  
+  msgid "How often to refresh the data (in seconds)"
+  msgstr "How often to refresh the data (in seconds)"
+  
+  msgid "Show Legend"
+  msgstr "Show Legend"
+  
+  msgid "Display the color legend on the map"
+  msgstr "Display the color legend on the map"
+  
+  msgid "Show Status"
+  msgstr "Show Status"
+  
+  msgid "Display connection status and refresh timer"
+  msgstr "Display connection status and refresh timer"
+  
+  msgid "Compact Mode"
+  msgstr "Compact Mode"
+  
+  msgid "Use compact layout for smaller spaces"
+  msgstr "Use compact layout for smaller spaces"
+  
+  msgid "sec"
+  msgstr "s"

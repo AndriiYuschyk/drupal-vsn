@@ -1,5 +1,4 @@
 map:
-  version: 1.0
   css:
     theme:
       css/ukraine-air-alerts.css: {}
@@ -8,3 +7,4 @@ map:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/once

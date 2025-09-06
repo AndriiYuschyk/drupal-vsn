@@ -3,82 +3,112 @@
 namespace Drupal\ukraine_air_alerts\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\ukraine_air_alerts\Service\AlertsApiClient;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
- * Provides a 'Ukraine Air Alerts Map' Block.
+ * Provides a Ukraine Air Alerts Map block.
  *
  * @Block(
  *   id = "ukraine_air_alerts_map",
  *   admin_label = @Translation("Ukraine Air Alerts Map"),
- *   category = @Translation("Ukraine Air Alerts"),
+ *   category = @Translation("Custom")
  * )
  */
-class UkraineAirAlertsBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class UkraineAirAlertsBlock extends BlockBase {
 
     /**
-     * The alerts API client service.
-     *
-     * @var \Drupal\ukraine_air_alerts\Service\AlertsApiClient
+     * {@inheritdoc}
      */
-    protected $alertsApiClient;
-
-    /**
-     * Constructs a UkraineAirAlertsBlock object.
-     *
-     * @param array $configuration
-     *   The plugin configuration.
-     * @param string $plugin_id
-     *   The plugin_id for the plugin instance.
-     * @param mixed $plugin_definition
-     *   The plugin implementation definition.
-     * @param \Drupal\ukraine_air_alerts\Service\AlertsApiClient $alerts_api_client
-     *   The alerts API client service.
-     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, AlertsApiClient $alerts_api_client) {
-        parent::__construct($configuration, $plugin_id, $plugin_definition);
-        $this->alertsApiClient = $alerts_api_client;
+    public function defaultConfiguration() {
+        return [
+                'show_legend' => TRUE,
+                'show_status' => TRUE,
+                'compact_mode' => FALSE,
+            ] + parent::defaultConfiguration();
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-        return new static(
-            $configuration,
-            $plugin_id,
-            $plugin_definition,
-            $container->get('ukraine_air_alerts.api_client')
-        );
+    public function blockForm($form, FormStateInterface $form_state) {
+        $form = parent::blockForm($form, $form_state);
+        $config = $this->getConfiguration();
+
+        $form['show_legend'] = [
+            '#type' => 'checkbox',
+            '#title' => $this->t('Show legend'),
+            '#default_value' => $config['show_legend'],
+            '#description' => $this->t('Display the color legend for alert statuses.'),
+        ];
+
+        $form['show_status'] = [
+            '#type' => 'checkbox',
+            '#title' => $this->t('Show status bar'),
+            '#default_value' => $config['show_status'],
+            '#description' => $this->t('Display connection status and refresh countdown.'),
+        ];
+
+        $form['compact_mode'] = [
+            '#type' => 'checkbox',
+            '#title' => $this->t('Compact mode'),
+            '#default_value' => $config['compact_mode'],
+            '#description' => $this->t('Display a smaller, more compact version of the map.'),
+        ];
+
+        return $form;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function build(): array {
-        $alerts = $this->alertsApiClient->getCurrentAlerts();
+    public function blockSubmit($form, FormStateInterface $form_state) {
+        parent::blockSubmit($form, $form_state);
+        $this->configuration['show_legend'] = $form_state->getValue('show_legend');
+        $this->configuration['show_status'] = $form_state->getValue('show_status');
+        $this->configuration['compact_mode'] = $form_state->getValue('compact_mode');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function build() {
+        $config = \Drupal::config('ukraine_air_alerts.settings');
+
+        if (empty($config->get('api_token'))) {
+            return [
+                '#markup' => '<div class="messages messages--warning">' .
+                    $this->t('Ukraine Air Alerts module is not configured. Please set up your API token in the <a href="@url">configuration</a>.', [
+                        '@url' => Url::fromRoute('ukraine_air_alerts.settings')->toString()
+                    ]) . '</div>',
+            ];
+        }
 
         return [
             '#theme' => 'ukraine_air_alerts_map',
-            '#alerts' => $alerts,
+            '#show_legend' => $this->configuration['show_legend'],
+            '#show_status' => $this->configuration['show_status'],
+            '#compact_mode' => $this->configuration['compact_mode'],
             '#attached' => [
                 'library' => [
                     'ukraine_air_alerts/map',
                 ],
                 'drupalSettings' => [
                     'ukraineAirAlerts' => [
-                        'alerts' => $alerts,
-                        'refreshInterval' => 300000, // 5 minutes
-                        'apiEndpoint' => '/api/air-alerts',
+                        'apiUrl' => Url::fromRoute('ukraine_air_alerts.api')->toString(),
+                        'refreshInterval' => ($config->get('refresh_interval') ?: 60) * 1000, // Convert to milliseconds
+                        'compactMode' => $this->configuration['compact_mode'],
                     ],
                 ],
             ],
-            '#cache' => [
-                'max-age' => 300, // 5 minutes
-                'tags' => ['ukraine_air_alerts'],
-            ],
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheMaxAge() {
+        // Cache for 30 seconds to ensure fresh data
+        return 30;
     }
 }

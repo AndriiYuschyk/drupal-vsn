@@ -1,70 +1,52 @@
-<div class="ukraine-air-alerts-wrapper">
-    <div class="ukraine-air-alerts-header">
-        <h2>{{ 'Карта повітряних тривог України'|t }}</h2>
-        <div class="alerts-last-updated" id="alerts-last-updated">
-            {{ 'Оновлено: '|t }}<span class="timestamp">{{ "now"|date("d.m.Y H:i") }}</span>
-        </div>
-    </div>
-
-    <div class="ukraine-air-alerts-legend">
-        <div class="legend-item alert-active">
-            <span class="legend-color"></span>
-            {{ 'Повітряна тривога'|t }}
-        </div>
-        <div class="legend-item alert-clear">
-            <span class="legend-color"></span>
-            {{ 'Відбій'|t }}
-        </div>
-        <div class="legend-item alert-unknown">
-            <span class="legend-color"></span>
-            {{ 'Невідомо'|t }}
-        </div>
-    </div>
-
-    <div class="ukraine-air-alerts-map" id="ukraine-air-alerts-map">
-        <!-- SVG карта України буде тут -->
-        <svg viewBox="0 0 800 600" class="ukraine-map-svg">
-            <!-- Кожна область як окремий path -->
-            {% for region_name, alert in alerts %}
-                <path
-                        class="region {{ alert.status_class }}"
-                        data-region="{{ region_name }}"
-                        data-status="{{ alert.status_text }}"
-                        data-changed="{{ alert.changed }}"
-                        d="M..."
-                        title="{{ region_name }}: {{ alert.status_text }}">
-                </path>
-            {% endfor %}
-        </svg>
-    </div>
-
-    <div class="ukraine-air-alerts-info">
-        <div class="alerts-count">
-            {% set active_alerts = alerts|filter(alert => alert.alert) %}
-            {{ 'Областей під тривогою: '|t }}<strong id="active-count">{{ active_alerts|length }}</strong>
-            {{ ' з '|t }}{{ alerts|length }}
-        </div>
-
-        <div class="alerts-refresh">
-            <button type="button" id="refresh-alerts" class="btn btn-secondary">
-                {{ 'Оновити дані'|t }}
-            </button>
-            <span class="refresh-status" id="refresh-status"></span>
-        </div>
-    </div>
-
-    <div class="ukraine-air-alerts-details" id="alerts-details">
-        <h3>{{ 'Деталі по областях'|t }}</h3>
-        <div class="alerts-list">
-            {% for region_name, alert in alerts %}
-                <div class="alert-item {{ alert.status_class }}" data-region="{{ region_name }}">
-                    <div class="alert-region">{{ region_name }}</div>
-                    <div class="alert-status">{{ alert.status_text }}</div>
-                    {% if alert.changed %}
-                        <div class="alert-changed">{{ alert.changed|date("d.m.Y H:i") }}</div>
-                    {% endif %}
+<div id="ukraine-air-alerts-map"{% if compact_mode %} class="compact-mode"{% endif %}>
+    <div class="map-container">
+        {% if not compact_mode %}
+            <div class="map-header">
+                <h2>
+                    {{ 'Air Raid Alerts in Ukraine' | t }}
+                    <img src="https://cdn.alerts.in.ua/assets/icons/ukraine.png"
+                         alt="Ukraine"
+                         class="map-header-flag">
+                </h2>
+                <div class="last-updated">
+                    {{ 'Last updated:' | t }} <span id="last-updated-time">{{ 'Loading...' | t }}</span>
                 </div>
-            {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if show_legend %}
+            <div class="map-legend">
+                <div class="legend-item">
+                    <span class="legend-color legend-none"></span>
+                    <span class="legend-text">{{ 'No Alert' | t }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color legend-partial"></span>
+                    <span class="legend-text">{{ 'Partial Alert' | t }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color legend-full"></span>
+                    <span class="legend-text">{{ 'Full Alert' | t }}</span>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="ukraine-map">
+            <svg id="ukraine-map-svg" viewBox="0 0 1000 670" xmlns="http://www.w3.org/2000/svg" aria-label="{{ 'Air Raid Alerts in Ukraine' | t }}">
+                <!-- SVG paths of Ukrainian regions will be injected dynamically via JavaScript -->
+            </svg>
         </div>
+
+        {% if show_status %}
+            <div class="map-status">
+                <div id="connection-status" class="status-connected">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">{{ 'Connected' | t }}</span>
+                </div>
+                <div class="refresh-info">
+                    {{ 'Next update in:' | t }} <span id="countdown">--</span> {{ 'sec' | t }}
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>

@@ -1,0 +1,76 @@
+# Ukrainian translation of Drupal (ukraine_air_alerts)
+# Copyright 2025
+  #
+  msgid ""
+  msgstr ""
+  "Project-Id-Version: ukraine_air_alerts\n"
+  "Language: uk\n"
+  "MIME-Version: 1.0\n"
+  "Content-Type: text/plain; charset=UTF-8\n"
+  "Content-Transfer-Encoding: 8bit\n"
+
+  msgid "Air Raid Alerts in Ukraine"
+  msgstr "Повітряні тривоги в Україні"
+  
+  msgid "Last updated:"
+  msgstr "Останнє оновлення:"
+  
+  msgid "Loading..."
+  msgstr "Завантаження..."
+  
+  msgid "No Alert"
+  msgstr "Без тривоги"
+  
+  msgid "Partial Alert"
+  msgstr "Часткова тривога"
+  
+  msgid "Full Alert"
+  msgstr "Повітряна тривога"
+  
+  msgid "Connected"
+  msgstr "Підключено"
+  
+  msgid "Connection Error"
+  msgstr "Помилка підключення"
+  
+  msgid "Next update in:"
+  msgstr "Наступне оновлення через:"
+  
+  msgid "Full Alert Active"
+  msgstr "Діє повітряна тривога"
+  
+  msgid "Ukraine Air Alerts Settings"
+  msgstr "Налаштування повітряних тривог України"
+  
+  msgid "API URL"
+  msgstr "URL API"
+  
+  msgid "Enter the API endpoint URL for air raid alerts data"
+  msgstr "Введіть URL кінцевої точки API для даних про повітряні тривоги"
+  
+  msgid "Refresh Interval"
+  msgstr "Інтервал оновлення"
+  
+  msgid "How often to refresh the data (in seconds)"
+  msgstr "Як часто оновлювати дані (в секундах)"
+  
+  msgid "Show Legend"
+  msgstr "Показати легенду"
+  
+  msgid "Display the color legend on the map"
+  msgstr "Відображати кольорову легенду на карті"
+  
+  msgid "Show Status"
+  msgstr "Показати статус"
+  
+  msgid "Display connection status and refresh timer"
+  msgstr "Відображати статус підключення та таймер оновлення"
+  
+  msgid "Compact Mode"
+  msgstr "Компактний режим"
+  
+  msgid "Use compact layout for smaller spaces"
+  msgstr "Використовувати компактне компонування для менших просторів"
+  
+  msgid "sec"
+  msgstr "c"
