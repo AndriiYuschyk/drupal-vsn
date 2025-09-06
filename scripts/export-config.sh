@@ -6,7 +6,7 @@ echo "🔄 Exporting Drupal configuration..."
 docker-compose exec drupal ./vendor/bin/drush config-export -y
 
 # Копіювання на хост
-docker cp drupal_main:/var/www/html/config ./
+docker cp drupal_main:/opt/drupal/web/config ./
 
 # Очищення кешу
 docker-compose exec drupal ./vendor/bin/drush cache-rebuild
