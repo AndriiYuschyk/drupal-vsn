@@ -97,3 +97,19 @@ msgstr ""
 #: config/schema/ukraine_air_alerts.schema.yml
 msgid "sec"
 msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "API Token"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Enter your API token from alerts.in.ua"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "Refresh Interval (seconds)"
+msgstr ""
+
+#: config/schema/ukraine_air_alerts.schema.yml
+msgid "How often to update the map (recommended: 15-120 seconds)"
+msgstr ""

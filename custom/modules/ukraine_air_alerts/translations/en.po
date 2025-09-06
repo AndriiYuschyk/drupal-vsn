@@ -74,3 +74,15 @@
   
   msgid "sec"
   msgstr "s"
+  
+  msgid "API Token"
+  msgstr "API Token"
+  
+  msgid "Enter your API token from alerts.in.ua"
+  msgstr "Enter your API token from alerts.in.ua"
+  
+  msgid "Refresh Interval (seconds)"
+  msgstr "Refresh Interval (seconds)"
+
+  msgid "How often to update the map (recommended: 15-120 seconds)"
+  msgstr ""

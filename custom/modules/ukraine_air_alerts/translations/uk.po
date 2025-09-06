@@ -74,3 +74,15 @@
   
   msgid "sec"
   msgstr "c"
+  
+  msgid "API Token"
+  msgstr "API-Токен доступу"
+  
+  msgid "Enter your API token from alerts.in.ua"
+  msgstr "Введіть свій API-Токен доступу з alerts.in.ua"
+  
+  msgid "Refresh Interval (seconds)"
+  msgstr "Інтервал оновлення (секунди)"
+
+  msgid "How often to update the map (recommended: 15-120 seconds)"
+  msgstr "Як часто оновлювати карту (рекомендовано: 15-120 секунд)"
