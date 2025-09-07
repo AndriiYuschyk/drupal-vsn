@@ -10,11 +10,14 @@ use GuzzleHttp\ClientInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Url;
+use Drupal\ukraine_air_alerts\Enum\AlertStatus;
+use Drupal\ukraine_air_alerts\Enum\AlertsInUAAlertStatus;
+use Drupal\ukraine_air_alerts\Enum\Regions;
 
 /**
  * Controller for Ukraine Air Alerts.
  */
-class AirAlertsController extends ControllerBase {
+class UkraineAirAlertsController extends ControllerBase {
 
     /**
      * The HTTP client.
@@ -37,9 +40,14 @@ class AirAlertsController extends ControllerBase {
     protected $configFactory;
 
     /**
-     * Constructs a new AirAlertsController.
+     * Constructs a new UkraineAirAlertsController.
      */
-    public function __construct(ClientInterface $http_client, CacheBackendInterface $cache, LoggerChannelFactoryInterface $logger_factory, ConfigFactoryInterface $config_factory) {
+    public function __construct(
+        ClientInterface $http_client,
+        CacheBackendInterface $cache,
+        LoggerChannelFactoryInterface $logger_factory,
+        ConfigFactoryInterface $config_factory
+    ) {
         $this->httpClient = $http_client;
         $this->cache = $cache;
         $this->loggerFactory = $logger_factory;
@@ -108,11 +116,11 @@ class AirAlertsController extends ControllerBase {
         $api_token = $config->get('api_token');
 
         if (empty($api_token)) {
-            return new JsonResponse(['error' => 'API token not configured'], 500);
+            return new JsonResponse(['error' => 'API token не сконфігуровано'], 500);
         }
 
         try {
-            $response = $this->httpClient->request('GET', 'https://api.alerts.in.ua/v1/iot/active_air_raid_alerts_by_oblast.json', [
+            $response = $this->httpClient->request('GET', $config->get('api_url'), [
                 'query' => ['token' => $api_token],
                 'timeout' => 10,
                 'headers' => [
@@ -130,13 +138,13 @@ class AirAlertsController extends ControllerBase {
 
                 return new JsonResponse($processed_data);
             } else {
-                $this->loggerFactory->get('ukraine_air_alerts')->error('Invalid API response format');
-                return new JsonResponse(['error' => 'Invalid API response'], 500);
+                $this->loggerFactory->get('ukraine_air_alerts')->error('Недійсний формат відповіді API');
+                return new JsonResponse(['error' => 'Недійсний формат відповіді API'], 500);
             }
 
         } catch (\Exception $e) {
-            $this->loggerFactory->get('ukraine_air_alerts')->error('API request failed: @message', ['@message' => $e->getMessage()]);
-            return new JsonResponse(['error' => 'API request failed'], 500);
+            $this->loggerFactory->get('ukraine_air_alerts')->error('Запит API не вдався: @message', ['@message' => $e->getMessage()]);
+            return new JsonResponse(['error' => 'Запит API не вдався'], 500);
         }
     }
 
@@ -144,53 +152,25 @@ class AirAlertsController extends ControllerBase {
      * Process the alerts data string into structured data.
      */
     private function processAlertsData($alerts_string) {
-        $regions = [
-            'Автономна Республіка Крим',
-            'Волинська область',
-            'Вінницька область',
-            'Дніпропетровська область',
-            'Донецька область',
-            'Житомирська область',
-            'Закарпатська область',
-            'Запорізька область',
-            'Івано-Франківська область',
-            'м. Київ',
-            'Київська область',
-            'Кіровоградська область',
-            'Луганська область',
-            'Львівська область',
-            'Миколаївська область',
-            'Одеська область',
-            'Полтавська область',
-            'Рівненська область',
-            'м. Севастополь',
-            'Сумська область',
-            'Тернопільська область',
-            'Харківська область',
-            'Херсонська область',
-            'Хмельницька область',
-            'Черкаська область',
-            'Чернівецька область',
-            'Чернігівська область'
-        ];
+        $regions = Regions::getAllRegions();
 
         $result = [];
         $alerts_array = str_split($alerts_string);
-
         for ($i = 0; $i < count($regions) && $i < count($alerts_array); $i++) {
             $status = $alerts_array[$i];
-            $alert_status = 'none';
 
             switch ($status) {
-                case 'A':
-                    $alert_status = 'full';
+                case AlertsInUAAlertStatus::A->value:
+                    $alert_status = AlertStatus::FULL;
                     break;
-                case 'P':
-                    $alert_status = 'partial';
+                case AlertsInUAAlertStatus::P->value:
+                    $alert_status = AlertStatus::PARTIAL;
                     break;
-                case 'N':
-                    $alert_status = 'none';
+                case AlertsInUAAlertStatus::N->value:
+                    $alert_status = AlertStatus::NONE;
                     break;
+                default:
+                    $alert_status = AlertStatus::NONE;
             }
 
             $result[] = [

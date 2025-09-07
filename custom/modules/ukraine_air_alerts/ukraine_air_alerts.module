@@ -14,7 +14,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 function ukraine_air_alerts_help($route_name, RouteMatchInterface $route_match) {
     switch ($route_name) {
         case 'help.page.ukraine_air_alerts':
-            return '<p>' . t('Цей модуль відображає сповіщення про повітряну тривогу в режимі реального часу для регіонів України 🇺🇦 на інтерактивній карті.') . '</p>';
+            return '<p>' . t('Цей модуль відображає сповіщення про повітряну тривогу в режимі реального часу для регіонів України на інтерактивній карті.') . '</p>';
     }
 }
 
@@ -28,7 +28,6 @@ function ukraine_air_alerts_theme($existing, $type, $theme, $path) {
                 'compact_mode' => FALSE,
                 'show_legend' => TRUE,
                 'show_status' => TRUE,
-                'api_url' => '',
                 'refresh_interval' => 60000,
             ],
             'template' => 'ukraine-air-alerts-map',
@@ -121,9 +120,9 @@ function ukraine_air_alerts_form_language_admin_overview_form_alter(&$form, Form
  */
 function ukraine_air_alerts_locale_translation_projects_alter(&$projects) {
     $projects['ukraine_air_alerts'] = [
-        'name' => 'Ukraine Air Alerts 🇺🇦',
+        'name' => 'Ukraine Air Alerts',
         'info' => [
-            'name' => 'Ukraine Air Alerts 🇺🇦',
+            'name' => 'Ukraine Air Alerts',
             'interface translation server pattern' => 'translations/%language.po',
         ],
     ];

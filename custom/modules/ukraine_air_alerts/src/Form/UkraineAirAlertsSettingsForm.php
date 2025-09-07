@@ -8,7 +8,8 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Configuration form for Ukraine Air Alerts settings.
  */
-class AirAlertsSettingsForm extends ConfigFormBase {
+class UkraineAirAlertsSettingsForm extends ConfigFormBase {
+    CONST string API_URL = 'https://api.alerts.in.ua/v1/iot/active_air_raid_alerts_by_oblast.json';
 
     /**
      * {@inheritdoc}
@@ -35,6 +36,16 @@ class AirAlertsSettingsForm extends ConfigFormBase {
             '#title' => $this->t('API Token'),
             '#description' => $this->t('Введіть свій API-токен з alerts.in.ua'),
             '#default_value' => $config->get('api_token'),
+            '#required' => TRUE,
+        ];
+
+        $form['api_url'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('alerts.in.ua API Url:'),
+            '#description' => $this->t('Посилання на API куди будуть здійснюватися запити для отримання тривог по областях'),
+            '#default_value' => $config->get('api_url') ?? self::API_URL,
+            '#min' => 10,
+            '#max' => 130,
             '#required' => TRUE,
         ];
 
@@ -85,6 +96,7 @@ class AirAlertsSettingsForm extends ConfigFormBase {
 
         $this->config('ukraine_air_alerts.settings')
             ->set('api_token', $form_state->getValue('api_token'))
+            ->set('api_url', $form_state->getValue('api_url'))
             ->set('refresh_interval', $form_state->getValue('refresh_interval'))
             ->save();
     }

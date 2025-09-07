@@ -1,15 +1,15 @@
 ukraine_air_alerts.map:
   path: '/ukraine-air-alerts'
   defaults:
-    _controller: '\Drupal\ukraine_air_alerts\Controller\AirAlertsController::mapPage'
-    _title: 'Ukraine 🇺🇦 Air Alerts Map'
+    _controller: '\Drupal\ukraine_air_alerts\Controller\UkraineAirAlertsController::mapPage'
+    _title: 'Ukraine Air Alerts Map'
   requirements:
     _permission: 'access content'
 
 ukraine_air_alerts.api:
   path: '/api/ukraine-air-alerts'
   defaults:
-    _controller: '\Drupal\ukraine_air_alerts\Controller\AirAlertsController::getAlertsStatus'
+    _controller: '\Drupal\ukraine_air_alerts\Controller\UkraineAirAlertsController::getAlertsStatus'
   requirements:
     _permission: 'access content'
   methods: [GET]
@@ -17,7 +17,7 @@ ukraine_air_alerts.api:
 ukraine_air_alerts.settings:
   path: '/admin/config/system/ukraine-air-alerts'
   defaults:
-    _form: '\Drupal\ukraine_air_alerts\Form\SettingsForm'
-    _title: 'Ukraine 🇺🇦 Air Alerts Settings'
+    _form: '\Drupal\ukraine_air_alerts\Form\UkraineAirAlertsSettingsForm'
+    _title: 'Ukraine Air Alerts Settings'
   requirements:
     _permission: 'administer site configuration'

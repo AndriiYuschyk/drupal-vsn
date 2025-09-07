@@ -5,7 +5,7 @@
         attach: function (context, settings) {
             once('ukraine-air-alerts', '#ukraine-air-alerts-map', context).forEach(function () {
                 var mapApp = new UkraineAirAlertsMap(settings.ukraineAirAlerts);
-                window.ukraineAirAlertsMap = mapApp; // для знищення при unload
+                window.ukraineAirAlertsMap = mapApp;
                 mapApp.init();
             });
         }

@@ -1,2 +1,3 @@
 api_token: '9f860fd4c208e2d26640073239133217532baa53ab2203'
+api_url: 'https://api.alerts.in.ua/v1/iot/active_air_raid_alerts_by_oblast.json'
 refresh_interval: 15

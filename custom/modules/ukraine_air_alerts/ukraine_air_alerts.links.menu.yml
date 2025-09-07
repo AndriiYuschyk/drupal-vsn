@@ -1,5 +1,5 @@
 ukraine_air_alerts.settings:
-  title: 'Ukraine Air Alerts 🇺🇦'
-  description: 'Налаштування параметрів карти повітряних сповіщень України 🇺🇦'
+  title: 'Ukraine Air Alerts'
+  description: 'Налаштування параметрів карти повітряних сповіщень України'
   parent: system.admin_config_system
   route_name: ukraine_air_alerts.settings

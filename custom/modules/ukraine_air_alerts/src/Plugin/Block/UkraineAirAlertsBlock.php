@@ -78,7 +78,7 @@ class UkraineAirAlertsBlock extends BlockBase {
         if (empty($config->get('api_token'))) {
             return [
                 '#markup' => '<div class="messages messages--warning">' .
-                    $this->t('Ukraine Air Alerts module is not configured. Please set up your API token in the <a href="@url">configuration</a>.', [
+                    $this->t('Ukraine Air Alerts модуль не налаштовано. Будь ласка, налаштуйте свій токен API у <a href="@url">конфігурації</a>.', [
                         '@url' => Url::fromRoute('ukraine_air_alerts.settings')->toString()
                     ]) . '</div>',
             ];
