@@ -1,0 +1,349 @@
+/* Cosmic Widget Styles */
+.cosmic-widget {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #0c0c2b 0%, #1a1a4a 50%, #2d2d5f 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.cosmic-widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+            radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+            radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 80px 80px;
+    pointer-events: none;
+    animation: stars 20s linear infinite;
+}
+
+@keyframes stars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+}
+
+/* Анімація для оновлення віджета */
+.cosmic-widget--updated {
+    animation: pulseGlow 0.8s ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 25px 50px rgba(79, 172, 254, 0.2);
+        transform: scale(1.02);
+    }
+}
+
+.cosmic-widget__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.cosmic-widget__title {
+    font-size: 2rem;
+    margin: 0;
+    background: linear-gradient(45deg, #ff6b9d, #4facfe, #00f2fe);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.cosmic-widget__btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.cosmic-widget__btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #7b8ff0 0%, #8a5bb8 100%);
+}
+
+.cosmic-widget__btn:active {
+    transform: translateY(0);
+}
+
+.cosmic-widget__btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cosmic-widget__btn-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.cosmic-widget__btn:hover .cosmic-widget__btn-icon:not(.cosmic-widget__btn:disabled .cosmic-widget__btn-icon) {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.cosmic-widget__content {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.cosmic-widget__image-container {
+    position: relative;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cosmic-widget__image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.cosmic-widget__image:hover {
+    transform: scale(1.05);
+}
+
+.cosmic-widget__image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+.cosmic-widget__image-container:hover .cosmic-widget__image-overlay {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+}
+
+.cosmic-widget__image-title {
+    font-size: 1.4rem;
+    margin: 0 0 5px 0;
+    /* Стиль як у заголовка віджета */
+    background: linear-gradient(45deg, #ff6b9d, #4facfe, #00f2fe);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.cosmic-widget__image-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.cosmic-widget__details {
+    display: grid;
+    gap: 20px;
+}
+
+.cosmic-widget__description,
+.cosmic-widget__fact {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.cosmic-widget__description:hover,
+.cosmic-widget__fact:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.cosmic-widget__description h4,
+.cosmic-widget__fact h4 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: #4facfe;
+}
+
+.cosmic-widget__description p,
+.cosmic-widget__fact p {
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+/* Стилі для текстового слайдера */
+.cosmic-widget__text-slider {
+    position: relative;
+    margin-top: 15px;
+}
+
+.cosmic-widget__text-content {
+    overflow: hidden;
+    transition: all 0.4s ease;
+    line-height: 1.6;
+    height: 4.8em;
+    opacity: 0.9;
+    display: flex;
+    align-items: flex-start;
+}
+
+.cosmic-widget__slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.cosmic-widget__slider-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(79, 172, 254, 0.3);
+}
+
+.cosmic-widget__slider-btn:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+    background: linear-gradient(135deg, #5fb3fe 0%, #10f3fe 100%);
+}
+
+.cosmic-widget__slider-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cosmic-widget__slider-info {
+    color: #4facfe;
+    font-size: 0.8rem;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Анімація для зміни тексту */
+.cosmic-widget__text-content.sliding {
+    animation: textSlide 0.4s ease-out;
+}
+
+@keyframes textSlide {
+    0% { opacity: 0.7; transform: translateX(10px); }
+    100% { opacity: 0.9; transform: translateX(0); }
+}
+
+/* Стилі для повідомлень про помилки */
+.cosmic-widget__error {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    animation: slideInFromTop 0.3s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cosmic-widget {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .cosmic-widget__header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .cosmic-widget__title {
+        font-size: 1.5rem;
+    }
+
+    .cosmic-widget__image {
+        height: 300px;
+    }
+
+    .cosmic-widget__btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .cosmic-widget__image-title {
+        font-size: 1.2rem;
+    }
+}

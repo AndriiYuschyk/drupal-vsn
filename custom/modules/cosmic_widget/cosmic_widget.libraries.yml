@@ -1,0 +1,11 @@
+cosmic_widget_assets:
+  css:
+    theme:
+      css/cosmic-widget.css: {}
+  js:
+    js/cosmic-widget.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.ajax
+    - core/once

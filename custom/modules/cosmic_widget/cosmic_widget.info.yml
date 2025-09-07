@@ -1,0 +1,10 @@
+name: 'Cosmic Widget'
+type: module
+description: 'Віджет NASA «Астрономічна картина дня» з цікавими фактами з Вікіданих на будь-яку випадково згенеровану дату'
+package: Custom
+version: 1.0.0
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:system
+  - drupal:block
+configure: cosmic_widget.settings

@@ -1,0 +1,54 @@
+<div class="cosmic-widget" id="cosmic-widget">
+    <div class="cosmic-widget__header">
+        <h2 class="cosmic-widget__title">🚀 {{ 'Cosmic Widget'|t }}</h2>
+        <div class="cosmic-widget__controls">
+            <button type="button" class="cosmic-widget__btn" id="cosmic-refresh-btn">
+                <span class="cosmic-widget__btn-icon">🪐</span>
+                {{ 'Get New Image'|t }}
+            </button>
+        </div>
+    </div>
+
+    <div class="cosmic-widget__content">
+        {% if image_url %}
+            <div class="cosmic-widget__image-container">
+                <img src="{{ image_url }}" alt="{{ image_title }}" class="cosmic-widget__image" id="cosmic-image" loading="lazy">
+                <div class="cosmic-widget__image-overlay">
+                    <div class="cosmic-widget__image-info">
+                        <h3 class="cosmic-widget__image-title">{{ image_title }}</h3>
+                        <p class="cosmic-widget__image-date">{{ date|date('d.m.Y') }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="cosmic-widget__details">
+            {% if image_explanation %}
+                <div class="cosmic-widget__description">
+                    <h4>✨ {{ 'About this image'|t }}:</h4>
+                    <div class="cosmic-widget__text-slider">
+                        <div class="cosmic-widget__text-content" data-full-text="{{ image_explanation }}">
+                            {{ image_explanation|length > 200 ? image_explanation|slice(0, 200) ~ '...' : image_explanation }}
+                        </div>
+                        {% if image_explanation|length > 200 %}
+                            <div class="cosmic-widget__slider-controls">
+                                <button type="button" class="cosmic-widget__slider-btn" id="text-prev">‹</button>
+                                <div class="cosmic-widget__slider-info">
+                                    <span id="text-current">1</span> / <span id="text-total">2</span>
+                                </div>
+                                <button type="button" class="cosmic-widget__slider-btn" id="text-next">›</button>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if fact %}
+                <div class="cosmic-widget__fact">
+                    <h4>🌟 {{ 'Did you know?'|t }}</h4>
+                    <p>{{ fact }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

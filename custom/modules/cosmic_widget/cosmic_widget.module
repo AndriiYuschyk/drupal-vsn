@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains cosmic_widget.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cosmic_widget_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        case 'help.page.cosmic_widget':
+            return '<p>' . t('Модуль «Космічний віджет» відображає астрономічну картинку дня від NASA з цікавими фактами з Вікіданих на будь-яку випадково згенеровану дату.') . '</p>';
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cosmic_widget_theme() {
+    return [
+        'cosmic_widget' => [
+            'variables' => [
+                'image_url' => NULL,
+                'image_title' => NULL,
+                'image_explanation' => NULL,
+                'date' => NULL,
+            ],
+            'template' => 'cosmic-widget',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_permission().
+ */
+function cosmic_widget_permission() {
+    return [
+        'administer cosmic widget' => [
+            'title' => t('Administer Cosmic Widget'),
+            'description' => t('Configure Cosmic Widget settings.'),
+        ],
+    ];
+}

@@ -1,0 +1,5 @@
+cosmic_widget.settings:
+  title: 'Cosmic Widget'
+  description: 'Налаштування параметрів Cosmic Widget'
+  parent: system.admin_config_system
+  route_name: cosmic_widget.settings

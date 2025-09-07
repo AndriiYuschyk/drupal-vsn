@@ -1,0 +1,24 @@
+cosmic_widget.settings:
+  path: '/admin/config/content/cosmic-widget'
+  defaults:
+    _form: '\Drupal\cosmic_widget\Form\CosmicWidgetSettingsForm'
+    _title: 'Cosmic Widget Settings'
+  requirements:
+    _permission: 'administer cosmic widget'
+
+cosmic_widget.page:
+  path: '/cosmic-widget'
+  defaults:
+    _controller: '\Drupal\cosmic_widget\Controller\CosmicWidgetController::page'
+    _title: 'Cosmic Widget'
+  requirements:
+    _permission: 'access content'
+
+cosmic_widget.ajax_new_image:
+  path: '/cosmic-widget/new-image'
+  defaults:
+    _controller: '\Drupal\cosmic_widget\Controller\CosmicWidgetController::getNewImage'
+  requirements:
+    _permission: 'access content'
+  options:
+    _format: json
