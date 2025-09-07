@@ -48,7 +48,7 @@ class CosmicWidgetSettingsForm extends ConfigFormBase {
             '#type' => 'textfield',
             '#title' => $this->t('NASA API Url:'),
             '#description' => $this->t('Посилання на API куди будуть здійснюватися запити'),
-            '#default_value' => $config->get('nasa_api_url') ?? static::NASA_API_URL,
+            '#default_value' => $config->get('nasa_api_url') ?? self::NASA_API_URL,
             '#min' => 10,
             '#max' => 130,
             '#required' => TRUE,

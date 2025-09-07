@@ -8,6 +8,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Drupal\Core\Url;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 
@@ -104,7 +105,7 @@ class CosmicWidgetController extends ControllerBase {
                 'drupalSettings' => [
                     'cosmicWidget' => [
                         'nasaApiKey' => $config->get('nasa_api_token'),
-                        'nasaApiUrl' => $config->get('nasa_api_url'),
+                        'nasaApiUrl' => Url::fromRoute('cosmic_widget.ajax_new_image')->toString(),
                     ],
                 ],
             ],
