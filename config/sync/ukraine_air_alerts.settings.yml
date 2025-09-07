@@ -1,4 +1,5 @@
 _core:
-  default_config_hash: RVpaiC_0sFr7QAhYgEsPBTQh72kQlL7BYinRec8vAmQ
+  default_config_hash: F3uQOUocw7H7gZ79jaJgLFAaqt4dn__S91PgPRm8ttM
 api_token: 9f860fd4c208e2d26640073239133217532baa53ab2203
+api_url: 'https://api.alerts.in.ua/v1/iot/active_air_raid_alerts_by_oblast.json'
 refresh_interval: '15'

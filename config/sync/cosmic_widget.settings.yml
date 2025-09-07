@@ -1,0 +1,4 @@
+_core:
+  default_config_hash: JFHCJ0r-xP9tSxdLNFim-6ty01gq3E8cJ7KAtCQPxDM
+nasa_api_key: wZj7ecgDCPfBNNEdYbNDuIiau4R4fJjUdIorpbX5
+nasa_api_url: 'https://api.nasa.gov/planetary/apod'
