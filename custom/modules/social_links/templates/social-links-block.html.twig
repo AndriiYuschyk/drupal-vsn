@@ -1,0 +1,9 @@
+{% if links %}
+    <div class="social-links">
+        {% for key, item in links %}
+            <a href="{{ item.url }}" target="_blank" rel="noopener" class="social-link social-{{ item.icon }}">
+                <img src="{{ module_path }}/icons/{{ item.icon }}.svg" alt="{{ item.icon }}" title="{{ item.icon }}">
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}

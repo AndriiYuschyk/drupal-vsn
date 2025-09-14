@@ -1,0 +1,8 @@
+name: 'Custom Social Links'
+type: module
+description: 'Користувацький блок для відображення посилань на соціальні мережі за допомогою іконок.'
+package: Custom
+core_version_requirement: ^10 || ^11
+version: '1.0'
+
+configure: social_links.admin_settings

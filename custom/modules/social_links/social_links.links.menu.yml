@@ -1,0 +1,5 @@
+social_links.admin_settings:
+  title: 'Social Links'
+  description: 'Налаштування параметрів Social Links'
+  parent: system.admin_config_system
+  route_name: social_links.admin_settings

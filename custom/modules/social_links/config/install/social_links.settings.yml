@@ -1,0 +1,46 @@
+links:
+  facebook:
+    icon: 'facebook'
+    enabled: true
+    url: ''
+    weight: 0
+  twitter:
+    icon: 'twitter'
+    enabled: false
+    url: ''
+    weight: 0
+  instagram:
+    icon: 'instagram'
+    enabled: false
+    url: ''
+    weight: 0
+  youtube:
+    icon: 'youtube'
+    enabled: false
+    url: ''
+    weight: 0
+  linkedin:
+    icon: 'linkedin'
+    enabled: false
+    url: ''
+    weight: 0
+  telegram:
+    icon: 'telegram'
+    enabled: false
+    url: ''
+    weight: 0
+  tiktok:
+    icon: 'tiktok'
+    enabled: false
+    url: ''
+    weight: 0
+  discord:
+    icon: 'discord'
+    enabled: false
+    url: ''
+    weight: 0
+  whatsapp:
+    icon: 'whatsapp'
+    enabled: false
+    url: ''
+    weight: 0

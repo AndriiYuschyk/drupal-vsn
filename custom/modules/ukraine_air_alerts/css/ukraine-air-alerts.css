@@ -1,7 +1,7 @@
 #ukraine-air-alerts-map {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding-bottom: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -88,7 +88,6 @@
 
 #ukraine-map-svg {
     width: 100%;
-    max-width: 800px;
     height: auto;
     border: 1px solid #ecf0f1;
     border-radius: 8px;

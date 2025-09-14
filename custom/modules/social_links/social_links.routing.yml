@@ -1,0 +1,7 @@
+social_links.admin_settings:
+  path: '/admin/config/system/social-links'
+  defaults:
+    _form: '\Drupal\social_links\Form\SocialLinksSettingsForm'
+    _title: 'Social Links Settings'
+  requirements:
+    _permission: 'administer site configuration'

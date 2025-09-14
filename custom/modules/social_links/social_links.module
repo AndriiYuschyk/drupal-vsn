@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains social_links.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function social_links_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        case 'help.page.social_links':
+            $output = '';
+            $output .= '<h3>' . t('Про модуль') . '</h3>';
+            $output .= '<p>' . t('Надає налаштовуваний блок посилань на соціальні мережі.') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function social_links_theme() {
+    return [
+        'social_links_block' => [
+            'variables' => [
+                'links' => [],
+                'module_path' => '',
+            ],
+            'template' => 'social-links-block',
+        ],
+    ];
+}
