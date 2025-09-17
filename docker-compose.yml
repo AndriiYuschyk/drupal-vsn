@@ -7,6 +7,8 @@ services:
     volumes:
       - drupal_data:/var/www/html
       - ./custom/modules:/opt/drupal/web/modules/custom
+      - ./custom/themes:/opt/drupal/web/themes/custom
+      - ./libraries/colorbox:/opt/drupal/web/libraries/colorbox
       - ./sites/default/settings.php:/var/www/html/sites/default/settings.php
     environment:
       DRUPAL_DATABASE_HOST: database
