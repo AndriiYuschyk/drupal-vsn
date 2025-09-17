@@ -10,7 +10,7 @@
 
 ## Модулі які були використані під час розробки
 - [Pathauto](https://www.drupal.org/project/pathauto) - Для генерації людино-зрозумілих посилань
-- [Pathauto](https://www.drupal.org/project/token) - Для отримання змінних середовища
+- [Token](https://www.drupal.org/project/token) - Для отримання змінних середовища
 - [Layout Builder](https://www.drupal.org/docs/8/core/modules/layout-builder) - Для налаштування структури сторінок
 - [Colorbox](https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-archive/contrib-modules-for-building-the-site-functionality/media-and-files/advanced-image-management/colorbox) - Для реалізації ефекту натискання на головне зображення новини і його збільшення
 - [Views Infinite Scroll](https://www.drupal.org/project/views_infinite_scroll) - Для реалізації кнопки "Показати ще" - підвантаження новин на головній сторінці (правий блок)
