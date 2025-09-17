@@ -1,0 +1,272 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f1f1f1;
+    color: #333;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+.main-content {
+    background: #fff;
+}
+
+.btn {
+    background-color: #4A5FBF;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 95, 191, 0.4);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.informer-date {
+    border-bottom: 2px solid #494b9b;
+    color: #494b9b;
+    display: flex;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3125;
+    padding-bottom: 3px;
+    transition: .2s;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.news-search .views-exposed-form {
+    max-width: 676px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+}
+
+.news-search .views-exposed-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.news-search .views-exposed-form .js-form-item {
+    flex: 1;
+}
+
+.news-search .views-exposed-form input[type="text"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px 0 0 6px;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: none;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.news-search .views-exposed-form .form-actions {
+    display: flex;
+    align-items: end;
+}
+
+.news-search .views-exposed-form .form-actions input[type="submit"] {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e5e5e5;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.user-login-form {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.user-login-form::before {
+    content: "Авторизація";
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.user-login-form .form-item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-login-form label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #494b9b;
+}
+
+.user-login-form input.form-text {
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.user-login-form input.form-text:focus {
+    border-color: #494b9b;
+    box-shadow: 0 0 0 3px rgba(73, 75, 155, 0.15);
+}
+
+.user-login-form .form-actions input.form-submit {
+    width: 100%;
+    padding: 12px;
+    background: #494b9b;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.user-login-form .form-actions input.form-submit:hover {
+    background: #2f3175;
+}
+
+[data-drupal-messages] {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+[data-drupal-messages] [role="alert"] {
+    background: #ffe9e9;
+    border: 1px solid #ffb3b3;
+    color: #a10000;
+    padding: 15px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+[data-drupal-messages] [role="alert"]::before {
+    content: "⚠️";
+    margin-right: 8px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+[data-drupal-messages] [role="alert"] a {
+    color: #494b9b;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+[data-drupal-messages] [role="alert"] a:hover {
+    color: #2f3175;
+}
+
+[data-drupal-messages] .status-message {
+    background: #eaf7ff;
+    border: 1px solid #b3e0ff;
+    color: #004d80;
+}
+
+[data-drupal-messages] .success-message {
+    background: #e9f9ec;
+    border: 1px solid #b3e6c1;
+    color: #0b6b2f;
+}
+
+article.contextual-region {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-size: 15px;
+    color: #333;
+}
+
+article.contextual-region h4.label {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #444;
+}
+
+article.contextual-region .js-form-item {
+    font-size: 15px;
+    color: #666;
+}
+
+article.contextual-region + article.contextual-region {
+    margin-top: 15px;
+}
+

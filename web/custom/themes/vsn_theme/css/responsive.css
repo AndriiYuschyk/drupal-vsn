@@ -577,3 +577,10 @@ img.lazy.loaded {
         padding: 10px 0;
     }
 }
+
+@media (max-width: 480px) {
+    .user-login-form {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+}
