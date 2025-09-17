@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+<head>
+    <head-placeholder token="{{ placeholder_token }}">
+        <title>{{ head_title|safe_join(' | ') }}</title>
+        <css-placeholder token="{{ placeholder_token }}">
+            <js-placeholder token="{{ placeholder_token }}">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body{{ attributes.addClass('vsn-body') }} class="page">
+<a href="#main-content" class="visually-hidden focusable skip-link">
+    {{ 'Skip to main content'|t }}
+</a>
+{{ page_top }}
+
+<div class="page-wrapper">
+    {# Header #}
+    <header class="site-header" role="banner">
+        <div class="header__container container container_wide">
+            <div class="header-content">
+                {# Site branding - VSN Logo (via block) #}
+                {{ page.header_top }}
+
+                {# Main navigation #}
+                <nav class="main-navigation header__main-menu" role="navigation">
+                    {{ page.primary_menu }}
+                </nav>
+
+                {# Search form #}
+                <div class="header__user-tools">
+                    <div class="header-search">
+                        {{ page.header_search }}
+                    </div>
+
+                    {# Social links #}
+                    <div class="header__socials header-social">
+                        {{ page.header_social }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {# Main content area #}
+    <main class="main-content">
+        <div class="container">
+            {% if page.breadcrumb %}
+                {{ page.breadcrumb }}
+            {% endif %}
+
+            {% if page.highlighted %}
+                <div class="highlighted">{{ page.highlighted }}</div>
+            {% endif %}
+
+            {% if page.help %}
+                {{ page.help }}
+            {% endif %}
+
+            <div class="content-layout">
+                <div class="content-main">
+                    {{ page.content }}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {# Footer #}
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer__top">
+            <div class="container footer__top-container">
+                <div class="footer__section footer__section_logo">
+                    {{ page.header_top }}
+                </div>
+                <div class="footer__section footer__section_article-menu">
+                        {{ page.footer_first }}
+                </div>
+                <div class="footer__section footer__section_info-menu">
+                    {{ page.footer_second }}
+                </div>
+                <div class="footer__section footer__section_socials">
+                    {{ page.footer_social }}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container footer__bottom-container">
+                {{ page.copyright }}
+                {{ page.about_project }}
+            </div>
+        </div>
+    </footer>
+</div>
+
+{{ page_bottom }}
+<js-bottom-placeholder token="{{ placeholder_token }}">
+</body>
+</html>

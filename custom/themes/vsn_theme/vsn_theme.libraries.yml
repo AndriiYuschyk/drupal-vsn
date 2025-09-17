@@ -1,0 +1,14 @@
+global-styling:
+  version: '1.0'
+  css:
+    theme:
+      css/style.css: {}
+      css/header.css: {}
+      css/footer.css: {}
+      css/content.css: {}
+      css/responsive.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css: {}
+  js:
+    js/main.js: {}
+  dependencies:
+    - core/drupal

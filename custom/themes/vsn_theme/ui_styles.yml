@@ -1,0 +1,52 @@
+# UI Styles для сторінки новини
+news-container:
+  label: "Контейнер новини"
+  classes:
+    - "news-container"
+    - "p-6"
+    - "bg-white"
+    - "rounded-lg"
+    - "shadow-sm"
+
+news-title:
+  label: "Заголовок новини"
+  classes:
+    - "news-title"
+    - "text-3xl"
+    - "font-bold"
+    - "mb-4"
+
+news-image:
+  label: "Головне зображення"
+  classes:
+    - "news-image"
+    - "w-full"
+    - "h-auto"
+    - "mb-4"
+    - "rounded"
+
+news-date:
+  label: "Дата публікації"
+  classes:
+    - "news-date"
+    - "text-gray-600"
+    - "text-sm"
+    - "mb-2"
+    - "italic"
+
+news-body:
+  label: "Тіло новини"
+  classes:
+    - "news-body"
+    - "text-base"
+    - "leading-relaxed"
+    - "mb-6"
+
+news-sidebar:
+  label: "Боковий блок"
+  classes:
+    - "news-sidebar"
+    - "bg-gray-50"
+    - "p-4"
+    - "rounded"
+    - "shadow-inner"

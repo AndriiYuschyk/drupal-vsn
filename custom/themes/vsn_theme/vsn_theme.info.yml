@@ -1,0 +1,22 @@
+name: VSN Theme
+type: theme
+description: 'Custom theme for VSN news site'
+package: Custom
+core_version_requirement: ^10 || ^11
+base theme: false
+
+libraries:
+  - vsn_theme/global-styling
+
+regions:
+  header_top: 'Header Top'
+  primary_menu: 'Primary Menu'
+  header_search: 'Header Search'
+  header_social: 'Header Social'
+  content: 'Content'
+  footer: 'Footer'
+  footer_first: 'Footer First Column'
+  footer_second: 'Footer Second Column'
+  footer_social: 'Footer Social'
+  copyright: 'Copyright block'
+  about_project: 'About project block'

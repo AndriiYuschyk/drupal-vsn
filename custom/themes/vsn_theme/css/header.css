@@ -1,0 +1,245 @@
+/* Container styles */
+.header__container {
+    align-items: center;
+    display: flex;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 18px 50px 17px 50px;
+}
+
+.header__container #block-vsn-theme-site-branding img {
+    margin-right: 55px;
+    height: 38px;
+}
+
+.container_wide {
+    max-width: 1950px;
+}
+
+/* Header styles */
+.site-header {
+    background-color: #fff;
+    color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Header content */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Logo section */
+.block-system-branding-block {
+    margin: 0;
+}
+
+.block-system-branding-block .site-logo img {
+    height: 40px;
+    width: auto;
+    max-width: 172px;
+    margin-right: 50px;
+}
+
+.block-system-branding-block .site-name {
+    display: none;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    margin: 2px 0;
+    transition: 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Main navigation */
+.header__main-menu.main-navigation {
+    flex-wrap: wrap;
+    height: 27px;
+    margin-right: 32px;
+    overflow: hidden;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.main-navigation li {
+    margin-right: 32px;
+}
+
+.main-navigation a {
+    color: #000;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.main-navigation a:hover,
+.main-navigation .is-active a {
+    color: #494b9b;
+}
+
+/* User tools (search and socials) */
+.header__user-tools {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.header-search {
+    margin-right: 20px;
+}
+
+/* Search form styling */
+.header-search .search-block-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 35px;
+}
+
+.header-search .form-submit {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 10px;
+    font-size: 0;
+    align-items: center;
+    height: 28px;
+    background: #fff;
+}
+
+.header-search .form-submit::before {
+    content: "🔍";
+    font-size: 16px;
+}
+
+.header-search .form-submit:hover::before {
+    color: #494b9b;
+}
+
+.header-search .form-search {
+    border: none;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+    font-family: Inter, Arial, sans-serif;
+    padding: 5px 10px;
+    width: 150px;
+    height: 28px;
+    transition: width 0.3s ease;
+}
+
+.header-search .form-search:focus {
+    width: 180px;
+}
+
+.header-search .form-search::placeholder {
+    color: #999;
+}
+
+.header-search .form-actions {
+    margin: 0;
+    padding: 0;
+}
+
+/* Social links */
+.header__socials.header-social {
+    padding-left: 20px;
+    position: relative;
+}
+
+.header__socials.header-social:before {
+    background-color: #e5e5e5;
+    content: "";
+    display: block;
+    height: 35px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+}
+
+.header-social .socials {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-social .socials__item {
+    margin-right: 16px;
+}
+
+.header-social .socials__link {
+    color: #ccc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    transition: color 0.3s ease;
+}
+
+.header-social .social-links a {
+    width: 20px;
+    height: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
