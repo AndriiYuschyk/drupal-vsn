@@ -41,6 +41,6 @@ Thumbs.db
 /logs/
 
 # Backup files
-*.sql
-*.tar.gz
-backup/
+#*.sql
+#*.tar.gz
+#backup/
