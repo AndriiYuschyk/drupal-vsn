@@ -6,7 +6,7 @@ name: VSN
 mail: andriiyuschyk@gmail.com
 slogan: ''
 page:
-  403: ''
+  403: /node/31
   404: /node/25
   front: /node/3
 admin_compact_mode: false

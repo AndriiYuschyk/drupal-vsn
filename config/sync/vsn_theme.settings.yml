@@ -8,4 +8,5 @@ logo:
   path: 'public://logo-full_1.svg'
 favicon:
   use_default: 0
-  path: ''
+  path: 'public://favicon-32x32_0.png'
+  mimetype: image/png
