@@ -6,10 +6,10 @@ services:
       - "8080:80"  # http://localhost:8080
     volumes:
       - drupal_data:/var/www/html
-      - ./custom/modules:/opt/drupal/web/modules/custom
-      - ./custom/themes:/opt/drupal/web/themes/custom
-      - ./libraries/colorbox:/opt/drupal/web/libraries/colorbox
-      - ./sites/default/settings.php:/var/www/html/sites/default/settings.php
+      - ./web/custom/modules:/opt/drupal/web/modules/custom
+      - ./web/custom/themes:/opt/drupal/web/themes/custom
+      - ./web/libraries/colorbox:/opt/drupal/web/libraries/colorbox
+      - ./web/sites/default/settings.php:/var/www/html/sites/default/settings.php
     environment:
       DRUPAL_DATABASE_HOST: database
       DRUPAL_DATABASE_NAME: drupal
