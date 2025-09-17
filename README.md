@@ -50,7 +50,7 @@ drupal-vsn/
 ```angular2html
 git clone [repository_url]
 
-cd drupal-project
+cd drupal-vsn
 ```
 2. Запуск контейнерів
 ```angular2html
