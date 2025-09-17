@@ -375,7 +375,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"{{ view_node }}\" class=\"full-news-teaser\">\r\n  <div class=\"common-news-teaser\">\r\n    <div class=\"full-news-teaser__media\">\r\n      {{ field_holovne_zobrazhennya }}\r\n{% if field_stiker %}\r\n      <div class=\"full-news-teaser__stickers\">\r\n          {{ field_stiker }}\r\n      </div>\r\n{% endif %}\r\n    </div>\r\n    <div class=\"full-news-teaser__info\">\r\n      <h3 class=\"full-news-teaser__title\">{{ title }}</h3>\r\n        {{ field_korotkyy_opys }}\r\n      <span class=\"full-news-teaser__date\">{{ created }}</span>\r\n    </div>\r\n  </div>\r\n</a>\r\n"
+            text: "<a href=\"{{ view_node }}\" class=\"full-news-teaser\">\r\n  <div class=\"common-news-teaser\">\r\n    <div class=\"full-news-teaser__media\">\r\n      {{ field_holovne_zobrazhennya }}\r\n{% if field_stiker %}\r\n      <div class=\"full-news-teaser__stickers\">\r\n          {{ field_stiker }}\r\n      </div>\r\n{% endif %}\r\n    </div>\r\n    <div class=\"full-news-teaser__info\">\r\n      <h3 class=\"full-news-teaser__title\">{{ title }}</h3>\r\n        {{ field_korotkyy_opys | raw }}\r\n      <span class=\"full-news-teaser__date\">{{ created }}</span>\r\n    </div>\r\n  </div>\r\n</a>\r\n"
             make_link: false
             path: ''
             absolute: false
