@@ -1,0 +1,22 @@
+uuid: a9d38ae0-844d-4941-803a-f3a1e3c6f3b0
+langcode: uk
+status: true
+dependencies:
+  module:
+    - social_links
+  theme:
+    - vsn_theme
+id: vsn_theme_sociallinks_2
+theme: vsn_theme
+region: footer_social
+weight: 0
+provider: null
+plugin: social_links_block
+settings:
+  id: social_links_block
+  label: 'Соціальні мережі'
+  label_display: visible
+  provider: social_links
+  use_global_settings: true
+  override_settings: {  }
+visibility: {  }

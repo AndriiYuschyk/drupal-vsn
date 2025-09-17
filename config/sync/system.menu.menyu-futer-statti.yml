@@ -1,0 +1,8 @@
+uuid: 252cf155-916a-4bae-b0bd-7edcb4b6b982
+langcode: uk
+status: true
+dependencies: {  }
+id: menyu-futer-statti
+label: 'Меню футер Статті'
+description: 'Колонка меню статтей у футері'
+locked: false

@@ -1,9 +1,9 @@
-uuid: 5144ba2b-a6fe-420f-8aad-83dc95f3a23c
+uuid: dd39301a-8641-4d80-a04b-1077f7bd3109
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search_result
     - field.field.node.page.body
     - field.field.node.page.layout_builder__layout
     - node.type.page
@@ -11,23 +11,26 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
-id: node.page.teaser
+  default_config_hash: gTB0Aw9yfUPvjMd_Pznb33eEqIGHqNQb5JtR3jZ18TE
+id: node.page.search_result
 targetEntityType: node
 bundle: page
-mode: teaser
+mode: search_result
 content:
   body:
     type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
     weight: 100
+    settings:
+      trim_length: 300
+    third_party_settings: {  }
+    label: hidden
     region: content
   links:
     weight: 101
+    settings: {  }
+    third_party_settings: {  }
     region: content
 hidden:
   langcode: true
   layout_builder__layout: true
+  search_api_excerpt: true

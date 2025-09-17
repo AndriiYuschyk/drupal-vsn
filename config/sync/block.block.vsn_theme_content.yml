@@ -1,0 +1,22 @@
+uuid: b9339d58-b5c4-472e-be35-7a626b76f7f1
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: vsn_theme_content
+theme: vsn_theme
+region: content
+weight: -9
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Основний вміст сторінки'
+  label_display: '0'
+  provider: system
+visibility: {  }

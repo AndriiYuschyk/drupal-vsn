@@ -1,20 +1,18 @@
-uuid: 614125ad-7cff-47aa-82df-51039f7ac415
+uuid: b6164a45-698f-4d65-bbfe-d62474450661
 langcode: uk
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_holovne_zobrazhennya
-    - field.storage.node.field_korotkyy_opys
     - field.storage.node.field_stiker
     - node.type.novyna
-    - taxonomy.vocabulary.katehoriyi_novyn
   module:
     - image
     - node
-    - text
+    - taxonomy
     - user
-id: novyny
-label: 'Новини за категоріями'
+id: mozhlyvo_zatsikavyt
+label: 'Можливо зацікавить'
 module: views
 description: ''
 tag: ''
@@ -27,12 +25,12 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Новини за категорією'
+      title: 'Можливо зацікавить'
       fields:
-        field_stiker:
-          id: field_stiker
-          table: node__field_stiker
-          field: field_stiker
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
@@ -78,18 +76,18 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: ul
+          multi_type: separator
           separator: ', '
           field_api_classes: false
         field_holovne_zobrazhennya:
@@ -148,7 +146,7 @@ display:
             image_style: ''
             image_loading:
               attribute: lazy
-          group_column: ''
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -158,16 +156,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: title
-          plugin_id: field
+          plugin_id: entity_link
           label: ''
           exclude: true
           alter:
@@ -188,8 +185,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: false
-            ellipsis: false
+            word_boundary: true
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -209,24 +206,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_korotkyy_opys:
-          id: field_korotkyy_opys
-          table: node__field_korotkyy_opys
-          field: field_korotkyy_opys
+          text: переглянути
+          output_url_as_text: true
+          absolute: false
+        field_stiker:
+          id: field_stiker
+          table: node__field_stiker
+          field: field_stiker
           relationship: none
           group_type: group
           admin_label: ''
@@ -272,18 +258,18 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_trimmed
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            trim_length: 600
-          group_column: value
+            link: false
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ul
           separator: ', '
           field_api_classes: false
         created:
@@ -297,10 +283,10 @@ display:
           entity_field: created
           plugin_id: field
           label: ''
-          exclude: true
+          exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<a href=\"{{ view_node }}\" class=\"common-news-teaser\" alt=\"{{ title }}\">\r\n    <div class=\"common-news-teaser_media\">\r\n      {{ field_holovne_zobrazhennya }}\r\n{% if field_stiker %}\r\n      <div class=\"full-news-teaser__stickers\">\r\n          {{ field_stiker }}\r\n      </div>\r\n{% endif %}\r\n    </div>\r\n  \r\n  <div class=\"common-news-teaser_info\">\r\n<p>{{ title }}</p>\r\n{{ created }}\r\n</div>\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -353,7 +339,7 @@ display:
               granularity: 2
               refresh: 60
               description: ''
-          group_column: value
+          group_column: entity_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -363,81 +349,11 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        view_node:
-          id: view_node
-          table: node
-          field: view_node
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: entity_link
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<a href=\"{{ view_node }}\" class=\"full-news-teaser\">\r\n  <div class=\"common-news-teaser\">\r\n    <div class=\"full-news-teaser__media\">\r\n      {{ field_holovne_zobrazhennya }}\r\n{% if field_stiker %}\r\n      <div class=\"full-news-teaser__stickers\">\r\n          {{ field_stiker }}\r\n      </div>\r\n{% endif %}\r\n    </div>\r\n    <div class=\"full-news-teaser__info\">\r\n      <h3 class=\"full-news-teaser__title\">{{ title }}</h3>\r\n        {{ field_korotkyy_opys }}\r\n      <span class=\"full-news-teaser__date\">{{ created }}</span>\r\n    </div>\r\n  </div>\r\n</a>\r\n"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          text: переглянути
-          output_url_as_text: true
-          absolute: false
       pager:
-        type: full
+        type: some
         options:
           offset: 0
-          pagination_heading_level: h4
-          items_per_page: 15
-          total_pages: null
-          id: 0
-          tags:
-            next: ›
-            previous: ‹
-            first: '« '
-            last: »
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Елементів на сторінку'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- Усе -'
-            offset: false
-            offset_label: Зміщення
-          quantity: 9
+          items_per_page: 9
       exposed_form:
         type: basic
         options:
@@ -474,28 +390,25 @@ display:
           exposed: false
           granularity: second
       arguments:
-        field_katehoriya_novyny_target_id:
-          id: field_katehoriya_novyny_target_id
-          table: node__field_katehoriya_novyny
-          field: field_katehoriya_novyny_target_id
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
-          default_action: ignore
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
+          default_action: default
           exception:
             value: all
             title_enable: false
             title: All
-          title_enable: true
-          title: '{{ arguments.field_katehoriya_novyny_target_id }}'
-          default_argument_type: taxonomy_tid
-          default_argument_options:
-            term_page: '1'
-            node: false
-            limit: false
-            vids: {  }
-            anyall: ','
+          title_enable: false
+          title: ''
+          default_argument_type: node
+          default_argument_options: {  }
           summary_options:
             base_path: ''
             count: true
@@ -505,18 +418,13 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: true
+          specify_validation: false
           validate:
-            type: 'entity:taxonomy_term'
+            type: none
             fail: 'not found'
-          validate_options:
-            bundles:
-              katehoriyi_novyn: katehoriyi_novyn
-            access: false
-            operation: view
-            multiple: 0
+          validate_options: {  }
           break_phrase: false
-          not: false
+          not: true
       filters:
         status:
           id: status
@@ -546,8 +454,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: boolean
-          operator: '='
-          value: '0'
+          operator: '!='
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -577,39 +485,41 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: default
+        type: grid
+        options:
+          grouping: {  }
+          columns: 3
+          automatic_width: true
+          alignment: horizontal
+          row_class_custom: ''
+          row_class_default: true
+          col_class_custom: ''
+          col_class_default: true
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
       query:
         type: views_query
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
-      relationships: {  }
-      css_class: news-page-list
-      header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
-          table: views
-          field: entity_taxonomy_term
+      relationships:
+        field_teg_y_novyn:
+          id: field_teg_y_novyn
+          table: node__field_teg_y_novyn
+          field: field_teg_y_novyn
           relationship: none
           group_type: group
-          admin_label: ''
-          plugin_id: entity
-          empty: false
-          target: '{{ raw_arguments.field_katehoriya_novyny_target_id }}'
-          view_mode: default
-          tokenize: true
-          bypass_access: false
+          admin_label: 'field_teg_y_novyn: Термін таксономії'
+          plugin_id: standard
+          required: true
+      css_class: be-interested
+      group_by: true
+      header: {  }
       footer: {  }
+      hide_attachment_summary: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -617,32 +527,28 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_holovne_zobrazhennya'
-        - 'config:field.storage.node.field_korotkyy_opys'
         - 'config:field.storage.node.field_stiker'
-  page_1:
-    id: page_1
-    display_title: Page
-    display_plugin: page
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
     position: 1
     display_options:
-      exposed_block: false
-      display_extenders: {  }
-      path: news/%
+      display_extenders:
+        ui_styles: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_holovne_zobrazhennya'
-        - 'config:field.storage.node.field_korotkyy_opys'
         - 'config:field.storage.node.field_stiker'

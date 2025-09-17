@@ -1,0 +1,46 @@
+links:
+  facebook:
+    enabled: true
+    url: 'https://www.facebook.com/newsregionlutsk12'
+    icon: facebook
+    weight: 2
+  twitter:
+    enabled: false
+    url: ''
+    icon: twitter
+    weight: 0
+  instagram:
+    enabled: true
+    url: 'https://instagram.com/vsn_volyn?igshid=YmMyMTA2M2Y='
+    icon: instagram
+    weight: 1
+  youtube:
+    enabled: false
+    url: ''
+    icon: youtube
+    weight: 0
+  linkedin:
+    enabled: false
+    url: ''
+    icon: linkedin
+    weight: 0
+  telegram:
+    enabled: true
+    url: 'https://t.me/VolynSN'
+    icon: telegram
+    weight: 3
+  tiktok:
+    enabled: false
+    url: ''
+    icon: tiktok
+    weight: 0
+  discord:
+    enabled: false
+    url: ''
+    icon: discord
+    weight: 0
+  whatsapp:
+    enabled: false
+    url: ''
+    icon: whatsapp
+    weight: 0

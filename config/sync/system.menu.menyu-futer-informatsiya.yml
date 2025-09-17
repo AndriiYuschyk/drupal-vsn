@@ -1,0 +1,8 @@
+uuid: 8560cc44-84d8-4d7e-b098-21235041aeaa
+langcode: uk
+status: true
+dependencies: {  }
+id: menyu-futer-informatsiya
+label: 'Меню футер Інформація'
+description: 'Колонка меню з інформацією у футері'
+locked: false

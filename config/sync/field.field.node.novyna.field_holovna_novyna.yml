@@ -1,0 +1,21 @@
+uuid: 6ff77f0d-9672-42f5-a0ad-15c3d14a3060
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_holovna_novyna
+    - node.type.novyna
+id: node.novyna.field_holovna_novyna
+field_name: field_holovna_novyna
+entity_type: node
+bundle: novyna
+label: 'Головна новина'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Увімкнено
+  off_label: Вимкнено
+field_type: boolean

@@ -2,13 +2,13 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: uk
 uuid: 419a8782-0a84-47ce-9f77-628dea70fbfd
-name: test.news.com
+name: VSN
 mail: andriiyuschyk@gmail.com
 slogan: ''
 page:
   403: ''
-  404: ''
-  front: /node
+  404: /node/25
+  front: /node/3
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: uk

@@ -1,0 +1,25 @@
+uuid: 76b5c91d-c4cc-4494-b740-1bf756ef6852
+langcode: uk
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a8e65d58-5134-4c37-9d68-24e4e37c261b'
+  module:
+    - block_content
+  theme:
+    - vsn_theme
+id: vsn_theme_copyright
+theme: vsn_theme
+region: copyright
+weight: 0
+provider: null
+plugin: 'block_content:a8e65d58-5134-4c37-9d68-24e4e37c261b'
+settings:
+  id: 'block_content:a8e65d58-5134-4c37-9d68-24e4e37c261b'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

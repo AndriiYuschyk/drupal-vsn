@@ -1,0 +1,20 @@
+uuid: b0f10523-48d6-4cc7-836b-048b5d8e8d0d
+langcode: uk
+status: false
+dependencies:
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: vsn_theme_primary_admin_actions
+theme: vsn_theme
+region: header_top
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Основні адміністративні дії'
+  label_display: '0'
+  provider: core
+visibility: {  }

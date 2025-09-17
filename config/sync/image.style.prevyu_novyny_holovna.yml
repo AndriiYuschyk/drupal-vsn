@@ -1,0 +1,15 @@
+uuid: 1673c032-980f-4b59-aabd-26b1f3361f05
+langcode: uk
+status: true
+dependencies: {  }
+name: prevyu_novyny_holovna
+label: "Прев'ю новини головна (355 х 60)"
+effects:
+  d0f39c55-bf0e-4747-8237-4d8e3fb752e3:
+    uuid: d0f39c55-bf0e-4747-8237-4d8e3fb752e3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 355
+      height: 60
+      anchor: center-center

@@ -1,0 +1,16 @@
+uuid: 77aa534c-d202-4443-bb5c-c0aa04ef0751
+langcode: uk
+status: true
+dependencies:
+  module:
+    - pathauto
+  enforced:
+    module:
+      - user
+_core:
+  default_config_hash: 6eiNWATGTd3lUEKuxNPNyDRDVMsUlM0HS90_R6JJLUI
+id: pathauto_update_alias_user
+label: 'Оновити синонім URL'
+type: user
+plugin: pathauto_update_alias
+configuration: {  }

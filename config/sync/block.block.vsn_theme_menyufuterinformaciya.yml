@@ -1,0 +1,25 @@
+uuid: 4858cc3c-679c-4c31-8612-4ac0728f0cac
+langcode: uk
+status: true
+dependencies:
+  config:
+    - system.menu.menyu-futer-informatsiya
+  module:
+    - system
+  theme:
+    - vsn_theme
+id: vsn_theme_menyufuterinformaciya
+theme: vsn_theme
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:menyu-futer-informatsiya'
+settings:
+  id: 'system_menu_block:menyu-futer-informatsiya'
+  label: Інформація
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

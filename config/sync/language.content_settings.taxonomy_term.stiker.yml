@@ -1,0 +1,11 @@
+uuid: fdb57583-c276-416b-a7c4-42d3b9c5ca6d
+langcode: uk
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.stiker
+id: taxonomy_term.stiker
+target_entity_type_id: taxonomy_term
+target_bundle: stiker
+default_langcode: site_default
+language_alterable: false

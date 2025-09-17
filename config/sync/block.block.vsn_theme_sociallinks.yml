@@ -1,0 +1,22 @@
+uuid: ebbf4aa2-5138-4b1e-8593-0d3f4f1a2e76
+langcode: uk
+status: true
+dependencies:
+  module:
+    - social_links
+  theme:
+    - vsn_theme
+id: vsn_theme_sociallinks
+theme: vsn_theme
+region: header_social
+weight: -10
+provider: null
+plugin: social_links_block
+settings:
+  id: social_links_block
+  label: 'Social Links'
+  label_display: '0'
+  provider: social_links
+  use_global_settings: true
+  override_settings: {  }
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 1c7c6f22-aeec-4d6a-a61c-949d5d7e4ad7
+langcode: uk
+status: false
+dependencies:
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: vsn_theme_primary_local_tasks
+theme: vsn_theme
+region: header_top
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Основні вкладки'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

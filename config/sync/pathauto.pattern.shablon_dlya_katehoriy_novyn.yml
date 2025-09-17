@@ -1,0 +1,22 @@
+uuid: 7f0b669a-4c0e-4c75-ae65-d472c4dbf79d
+langcode: uk
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: shablon_dlya_katehoriy_novyn
+label: 'Шаблон для категорій новин'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'news/[term:name]'
+selection_criteria:
+  deffc65e-a0ed-4792-b2c2-efa2f7cc4b84:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: deffc65e-a0ed-4792-b2c2-efa2f7cc4b84
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      katehoriyi_novyn: katehoriyi_novyn
+selection_logic: and
+weight: -5
+relationships: {  }

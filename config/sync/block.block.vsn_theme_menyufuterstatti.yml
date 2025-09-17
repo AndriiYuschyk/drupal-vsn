@@ -1,0 +1,25 @@
+uuid: 7340d7b3-1b87-45d4-aefb-f7c75d1f9983
+langcode: uk
+status: true
+dependencies:
+  config:
+    - system.menu.menyu-futer-statti
+  module:
+    - system
+  theme:
+    - vsn_theme
+id: vsn_theme_menyufuterstatti
+theme: vsn_theme
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:menyu-futer-statti'
+settings:
+  id: 'system_menu_block:menyu-futer-statti'
+  label: Статті
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

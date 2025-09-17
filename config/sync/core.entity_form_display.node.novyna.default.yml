@@ -3,12 +3,14 @@ langcode: uk
 status: true
 dependencies:
   config:
+    - field.field.node.novyna.field_holovna_novyna
     - field.field.node.novyna.field_holovne_zobrazhennya
     - field.field.node.novyna.field_katehoriya_novyny
     - field.field.node.novyna.field_korotkyy_opys
     - field.field.node.novyna.field_opys
+    - field.field.node.novyna.field_stiker
     - field.field.node.novyna.field_teg_y_novyn
-    - field.field.node.novyna.field_zaholovok
+    - field.field.node.novyna.field_vidobrazhaty_foto_v_prevyu
     - image.style.thumbnail
     - node.type.novyna
   module:
@@ -25,6 +27,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_holovna_novyna:
+    type: boolean_checkbox
+    weight: 127
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_holovne_zobrazhennya:
     type: image_image
@@ -62,6 +71,16 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  field_stiker:
+    type: entity_reference_autocomplete
+    weight: 129
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_teg_y_novyn:
     type: entity_reference_autocomplete
     weight: 126
@@ -72,13 +91,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_zaholovok:
-    type: text_textfield
-    weight: 122
+  field_vidobrazhaty_foto_v_prevyu:
+    type: boolean_checkbox
+    weight: 128
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      display_label: true
     third_party_settings: {  }
   langcode:
     type: language_select

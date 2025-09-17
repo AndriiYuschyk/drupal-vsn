@@ -1,0 +1,25 @@
+uuid: a58686fc-48cf-4670-bf1f-fa73aa8c0e65
+langcode: uk
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:20dfcf1f-61e5-4684-a5aa-2af050a0c2b8'
+  module:
+    - block_content
+  theme:
+    - vsn_theme
+id: vsn_theme_novaformaposhuku
+theme: vsn_theme
+region: header_search
+weight: 0
+provider: null
+plugin: 'block_content:20dfcf1f-61e5-4684-a5aa-2af050a0c2b8'
+settings:
+  id: 'block_content:20dfcf1f-61e5-4684-a5aa-2af050a0c2b8'
+  label: 'Форма пошуку'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

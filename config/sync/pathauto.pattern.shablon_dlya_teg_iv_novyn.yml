@@ -1,0 +1,22 @@
+uuid: 4bd9d82f-caaa-4c3e-9d0b-23d5315ff733
+langcode: uk
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: shablon_dlya_teg_iv_novyn
+label: 'Шаблон для теґів новин'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'tag/[term:name]'
+selection_criteria:
+  818b31a9-ec51-4173-a399-7c2f63c14858:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 818b31a9-ec51-4173-a399-7c2f63c14858
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      teg_y_novyn: teg_y_novyn
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,20 +1,23 @@
-uuid: 614125ad-7cff-47aa-82df-51039f7ac415
+uuid: ee3cae2f-384e-418e-9aab-cc3a8018a3eb
 langcode: uk
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_holovne_zobrazhennya
-    - field.storage.node.field_korotkyy_opys
-    - field.storage.node.field_stiker
+    - field.storage.node.field_katehoriya_novyny
     - node.type.novyna
     - taxonomy.vocabulary.katehoriyi_novyn
+  content:
+    - 'taxonomy_term:katehoriyi_novyn:2c2748c4-58d3-4279-8146-204ed9b80603'
   module:
+    - better_exposed_filters
     - image
     - node
-    - text
+    - taxonomy
     - user
-id: novyny
-label: 'Новини за категоріями'
+    - views_infinite_scroll
+id: novyny_z_katehoriyamy_lazy
+label: 'Новини з категоріями Lazy'
 module: views
 description: ''
 tag: ''
@@ -27,71 +30,8 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Новини за категорією'
+      title: 'Новини з категоріями Lazy'
       fields:
-        field_stiker:
-          id: field_stiker
-          table: node__field_stiker
-          field: field_stiker
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: ul
-          separator: ', '
-          field_api_classes: false
         field_holovne_zobrazhennya:
           id: field_holovne_zobrazhennya
           table: node__field_holovne_zobrazhennya
@@ -149,134 +89,6 @@ display:
             image_loading:
               attribute: lazy
           group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: false
-            ellipsis: false
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_korotkyy_opys:
-          id: field_korotkyy_opys
-          table: node__field_korotkyy_opys
-          field: field_korotkyy_opys
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_trimmed
-          settings:
-            trim_length: 600
-          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -344,7 +156,7 @@ display:
             custom_date_format: 'd F Y, H:i'
             timezone: ''
             tooltip:
-              date_format: long
+              date_format: short
               custom_date_format: ''
             time_diff:
               enabled: false
@@ -354,6 +166,69 @@ display:
               refresh: 60
               description: ''
           group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_katehoriya_novyny:
+          id: field_katehoriya_novyny
+          table: node__field_katehoriya_novyny
+          field: field_katehoriya_novyny
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -373,10 +248,10 @@ display:
           entity_type: node
           plugin_id: entity_link
           label: ''
-          exclude: false
+          exclude: true
           alter:
-            alter_text: true
-            text: "<a href=\"{{ view_node }}\" class=\"full-news-teaser\">\r\n  <div class=\"common-news-teaser\">\r\n    <div class=\"full-news-teaser__media\">\r\n      {{ field_holovne_zobrazhennya }}\r\n{% if field_stiker %}\r\n      <div class=\"full-news-teaser__stickers\">\r\n          {{ field_stiker }}\r\n      </div>\r\n{% endif %}\r\n    </div>\r\n    <div class=\"full-news-teaser__info\">\r\n      <h3 class=\"full-news-teaser__title\">{{ title }}</h3>\r\n        {{ field_korotkyy_opys }}\r\n      <span class=\"full-news-teaser__date\">{{ created }}</span>\r\n    </div>\r\n  </div>\r\n</a>\r\n"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -416,19 +291,80 @@ display:
           text: переглянути
           output_url_as_text: true
           absolute: false
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<a href=\"{{ view_node }}\" class=\"common-news-teaser\" alt=\"{{ title }}\">\r\n    <div class=\"common-news-teaser_media\">\r\n      {{ field_holovne_zobrazhennya }}\r\n    </div>\r\n  \r\n  <div class=\"common-news-teaser_info\">\r\n<p>{{ title }}</p>\r\n{{ created }}\r\n</div>\r\n</a>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
-        type: full
+        type: infinite_scroll
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 15
+          items_per_page: 4
           total_pages: null
           id: 0
           tags:
-            next: ›
-            previous: ‹
-            first: '« '
-            last: »
+            next: 'Наступна ›'
+            previous: '‹ Попередня'
           expose:
             items_per_page: false
             items_per_page_label: 'Елементів на сторінку'
@@ -437,9 +373,12 @@ display:
             items_per_page_options_all_label: '- Усе -'
             offset: false
             offset_label: Зміщення
-          quantity: 9
+          views_infinite_scroll:
+            button_text: 'Показати більше +'
+            automatically_load_content: false
+            initially_load_all_pages: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Застосувати
           reset_button: false
@@ -448,6 +387,33 @@ display:
           expose_sort_order: true
           sort_asc_label: Зрост
           sort_desc_label: Спад
+          text_input_required: 'Щоб побачити результат, виберіть довільний фільтр і натисніть "Застосувати"'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: true
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Розширені параметри'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_katehoriya_novyny_target_id:
+                plugin_id: bef_links
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
+                select_all_none: false
       access:
         type: perm
         options:
@@ -473,50 +439,7 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
-      arguments:
-        field_katehoriya_novyny_target_id:
-          id: field_katehoriya_novyny_target_id
-          table: node__field_katehoriya_novyny
-          field: field_katehoriya_novyny_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity_target_id
-          default_action: ignore
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: true
-          title: '{{ arguments.field_katehoriya_novyny_target_id }}'
-          default_argument_type: taxonomy_tid
-          default_argument_options:
-            term_page: '1'
-            node: false
-            limit: false
-            vids: {  }
-            anyall: ','
-          summary_options:
-            base_path: ''
-            count: true
-            override: false
-            items_per_page: 25
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: true
-          validate:
-            type: 'entity:taxonomy_term'
-            fail: 'not found'
-          validate_options:
-            bundles:
-              katehoriyi_novyn: katehoriyi_novyn
-            access: false
-            operation: view
-            multiple: 0
-          break_phrase: false
-          not: false
+      arguments: {  }
       filters:
         status:
           id: status
@@ -538,6 +461,64 @@ display:
           plugin_id: bundle
           value:
             novyna: novyna
+        field_katehoriya_novyny_target_id:
+          id: field_katehoriya_novyny_target_id
+          table: node__field_katehoriya_novyny
+          field: field_katehoriya_novyny_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: and
+          value:
+            4: 4
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_katehoriya_novyny_target_id_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_katehoriya_novyny_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_katehoriya_novyny_target_id
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: field_katehoriya_novyny_target_id
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: '1'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: ''
+                operator: and
+                value: {  }
+              2:
+                title: ''
+                operator: or
+                value: {  }
+              3:
+                title: ''
+                operator: or
+                value: {  }
+          reduce_duplicates: false
+          vid: katehoriyi_novyn
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: false
         field_holovna_novyna_value:
           id: field_holovna_novyna_value
           table: node__field_holovna_novyna
@@ -577,14 +558,18 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: default
+        type: grid
+        options:
+          grouping: {  }
+          columns: 2
+          automatic_width: true
+          alignment: vertical
+          row_class_custom: ''
+          row_class_default: true
+          col_class_custom: ''
+          col_class_default: true
       row:
         type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
       query:
         type: views_query
         options:
@@ -594,21 +579,14 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      css_class: news-page-list
-      header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
-          table: views
-          field: entity_taxonomy_term
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity
-          empty: false
-          target: '{{ raw_arguments.field_katehoriya_novyny_target_id }}'
-          view_mode: default
-          tokenize: true
-          bypass_access: false
+      css_class: lazy-news
+      use_ajax: true
+      use_more: false
+      use_more_always: false
+      use_more_text: 'Показати ще'
+      link_display: '0'
+      link_url: /news
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -622,17 +600,15 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_holovne_zobrazhennya'
-        - 'config:field.storage.node.field_korotkyy_opys'
-        - 'config:field.storage.node.field_stiker'
-  page_1:
-    id: page_1
-    display_title: Page
-    display_plugin: page
+        - 'config:field.storage.node.field_katehoriya_novyny'
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
     position: 1
     display_options:
       exposed_block: false
       display_extenders: {  }
-      path: news/%
     cache_metadata:
       max-age: -1
       contexts:
@@ -644,5 +620,4 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_holovne_zobrazhennya'
-        - 'config:field.storage.node.field_korotkyy_opys'
-        - 'config:field.storage.node.field_stiker'
+        - 'config:field.storage.node.field_katehoriya_novyny'

@@ -1,0 +1,20 @@
+uuid: e31bf655-94db-40c1-86ee-53fbb6d61b1a
+langcode: uk
+status: false
+dependencies:
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: vsn_theme_page_title
+theme: vsn_theme
+region: header_top
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Заголовок сторінки'
+  label_display: '0'
+  provider: core
+visibility: {  }

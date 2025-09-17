@@ -1,20 +1,19 @@
-uuid: 614125ad-7cff-47aa-82df-51039f7ac415
+uuid: 7d5e3944-64f6-41f2-8d68-d587a4651a39
 langcode: uk
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_holovne_zobrazhennya
     - field.storage.node.field_korotkyy_opys
     - field.storage.node.field_stiker
     - node.type.novyna
-    - taxonomy.vocabulary.katehoriyi_novyn
   module:
     - image
     - node
     - text
     - user
-id: novyny
-label: 'Новини за категоріями'
+id: vsi_novyny
+label: 'Всі Новини '
 module: views
 description: ''
 tag: ''
@@ -27,7 +26,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Новини за категорією'
+      title: Новини
       fields:
         field_stiker:
           id: field_stiker
@@ -422,12 +421,12 @@ display:
           offset: 0
           pagination_heading_level: h4
           items_per_page: 15
-          total_pages: null
+          total_pages: 0
           id: 0
           tags:
             next: ›
             previous: ‹
-            first: '« '
+            first: «
             last: »
           expose:
             items_per_page: false
@@ -473,50 +472,7 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
-      arguments:
-        field_katehoriya_novyny_target_id:
-          id: field_katehoriya_novyny_target_id
-          table: node__field_katehoriya_novyny
-          field: field_katehoriya_novyny_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity_target_id
-          default_action: ignore
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: true
-          title: '{{ arguments.field_katehoriya_novyny_target_id }}'
-          default_argument_type: taxonomy_tid
-          default_argument_options:
-            term_page: '1'
-            node: false
-            limit: false
-            vids: {  }
-            anyall: ','
-          summary_options:
-            base_path: ''
-            count: true
-            override: false
-            items_per_page: 25
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: true
-          validate:
-            type: 'entity:taxonomy_term'
-            fail: 'not found'
-          validate_options:
-            bundles:
-              katehoriyi_novyn: katehoriyi_novyn
-            access: false
-            operation: view
-            multiple: 0
-          break_phrase: false
-          not: false
+      arguments: {  }
       filters:
         status:
           id: status
@@ -595,20 +551,23 @@ display:
           query_tags: {  }
       relationships: {  }
       css_class: news-page-list
+      use_more: false
+      use_more_always: true
+      use_more_text: 'Показати більше +'
       header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
+        area:
+          id: area
           table: views
-          field: entity_taxonomy_term
+          field: area
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity
+          plugin_id: text
           empty: false
-          target: '{{ raw_arguments.field_katehoriya_novyny_target_id }}'
-          view_mode: default
-          tokenize: true
-          bypass_access: false
+          content:
+            value: "<div>\r\n      <h2><a href=\"/news\">\r\n            <div>Новини</div>\r\n      </a></h2>\r\n</div>"
+            format: basic_html
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -616,7 +575,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
@@ -632,13 +590,12 @@ display:
     display_options:
       exposed_block: false
       display_extenders: {  }
-      path: news/%
+      path: news
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions

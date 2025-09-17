@@ -1,0 +1,22 @@
+uuid: 95c83570-2c3a-4997-87fd-21f13da23c68
+langcode: uk
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: vsn_theme_breadcrumbs
+theme: vsn_theme
+region: header_top
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Рядки навіґації'
+  label_display: '0'
+  provider: system
+visibility: {  }

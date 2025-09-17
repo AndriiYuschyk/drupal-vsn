@@ -1,0 +1,23 @@
+uuid: fb6823bc-963c-4362-ad23-e27ed74ef67f
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vidobrazhaty_foto_v_prevyu
+    - node.type.novyna
+id: node.novyna.field_vidobrazhaty_foto_v_prevyu
+field_name: field_vidobrazhaty_foto_v_prevyu
+entity_type: node
+bundle: novyna
+label: "Відображати фото в прев'ю"
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Увімкнено
+  off_label: Вимкнено
+field_type: boolean

@@ -1,0 +1,20 @@
+uuid: f2678d42-b72e-4e1a-a21c-c91d5102ef8d
+langcode: uk
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_stiker
+field_name: field_stiker
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

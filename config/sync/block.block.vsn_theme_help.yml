@@ -1,0 +1,22 @@
+uuid: 6f19ead6-f049-471e-bf17-09b2f1b3e70a
+langcode: uk
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: vsn_theme_help
+theme: vsn_theme
+region: header_top
+weight: -1
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Довідка
+  label_display: '0'
+  provider: help
+visibility: {  }

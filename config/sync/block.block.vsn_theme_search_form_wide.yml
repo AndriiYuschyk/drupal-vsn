@@ -1,0 +1,23 @@
+uuid: 5eb728cd-9a07-4905-b585-7c5758f6130d
+langcode: uk
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: pbbed0hdqGDF-_QWVVTWRAwgDIotFuAvWH5mWUZu0fA
+id: vsn_theme_search_form_wide
+theme: vsn_theme
+region: header_top
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Форма пошуку (широка)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

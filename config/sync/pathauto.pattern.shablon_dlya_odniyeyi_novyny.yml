@@ -1,0 +1,22 @@
+uuid: bb3d8253-0b94-412e-bcda-8049ed318507
+langcode: uk
+status: true
+dependencies:
+  module:
+    - node
+id: shablon_dlya_odniyeyi_novyny
+label: 'Шаблон для однієї новини'
+type: 'canonical_entities:node'
+pattern: 'news/[node:title]'
+selection_criteria:
+  43c2d7f7-7c77-46ff-98e5-2091db71df67:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 43c2d7f7-7c77-46ff-98e5-2091db71df67
+    context_mapping:
+      node: node
+    bundles:
+      novyna: novyna
+selection_logic: and
+weight: -5
+relationships: {  }

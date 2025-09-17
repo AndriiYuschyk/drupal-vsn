@@ -1,20 +1,20 @@
-uuid: 614125ad-7cff-47aa-82df-51039f7ac415
+uuid: 022d72f5-3327-425d-994f-ed51bb406297
 langcode: uk
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_holovne_zobrazhennya
     - field.storage.node.field_korotkyy_opys
     - field.storage.node.field_stiker
     - node.type.novyna
-    - taxonomy.vocabulary.katehoriyi_novyn
   module:
     - image
     - node
+    - taxonomy
     - text
     - user
-id: novyny
-label: 'Новини за категоріями'
+id: novyny_za_teg_amy
+label: 'Терміни таксономії'
 module: views
 description: ''
 tag: ''
@@ -27,7 +27,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Новини за категорією'
+      title: 'Термін таксономії'
       fields:
         field_stiker:
           id: field_stiker
@@ -474,28 +474,24 @@ display:
           exposed: false
           granularity: second
       arguments:
-        field_katehoriya_novyny_target_id:
-          id: field_katehoriya_novyny_target_id
-          table: node__field_katehoriya_novyny
-          field: field_katehoriya_novyny_target_id
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
-          default_action: ignore
+          plugin_id: taxonomy_index_tid
+          default_action: 'not found'
           exception:
             value: all
             title_enable: false
             title: All
           title_enable: true
-          title: '{{ arguments.field_katehoriya_novyny_target_id }}'
-          default_argument_type: taxonomy_tid
+          title: '{{ arguments.tid }}'
+          default_argument_type: fixed
           default_argument_options:
-            term_page: '1'
-            node: false
-            limit: false
-            vids: {  }
-            anyall: ','
+            argument: ''
           summary_options:
             base_path: ''
             count: true
@@ -510,13 +506,14 @@ display:
             type: 'entity:taxonomy_term'
             fail: 'not found'
           validate_options:
-            bundles:
-              katehoriyi_novyn: katehoriyi_novyn
+            bundles: {  }
             access: false
             operation: view
             multiple: 0
           break_phrase: false
-          not: false
+          add_table: false
+          require_value: false
+          reduce_duplicates: false
       filters:
         status:
           id: status
@@ -604,8 +601,8 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: entity
-          empty: false
-          target: '{{ raw_arguments.field_katehoriya_novyny_target_id }}'
+          empty: true
+          target: '{{ raw_arguments.tid }}'
           view_mode: default
           tokenize: true
           bypass_access: false
@@ -631,8 +628,9 @@ display:
     position: 1
     display_options:
       exposed_block: false
-      display_extenders: {  }
-      path: news/%
+      display_extenders:
+        ui_styles: {  }
+      path: taxonomy/term/%
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,27 @@
+uuid: 5ce59daf-2615-43eb-8e81-d725fcc2c8b4
+langcode: uk
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - vsn_theme
+_core:
+  default_config_hash: gmxYWWHmgbe0Pnv8y48ZLSLH5mEHejOjAP6RLxUfdzU
+id: vsn_theme_account_menu
+theme: vsn_theme
+region: header_top
+weight: -3
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Меню облікового запису користувача'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

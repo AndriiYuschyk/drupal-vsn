@@ -3,22 +3,111 @@ langcode: uk
 status: true
 dependencies:
   config:
+    - field.field.node.novyna.field_holovna_novyna
     - field.field.node.novyna.field_holovne_zobrazhennya
     - field.field.node.novyna.field_katehoriya_novyny
     - field.field.node.novyna.field_korotkyy_opys
     - field.field.node.novyna.field_opys
+    - field.field.node.novyna.field_stiker
     - field.field.node.novyna.field_teg_y_novyn
-    - field.field.node.novyna.field_zaholovok
+    - field.field.node.novyna.field_vidobrazhaty_foto_v_prevyu
     - node.type.novyna
+    - views.view.holovna_novyny
+    - views.view.mozhlyvo_zatsikavyt
+    - views.view.odna_novyna
   module:
     - image
+    - layout_builder
+    - layout_discovery
     - text
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          2c010b89-3c46-4697-83da-7cfe7ac1c32d:
+            uuid: 2c010b89-3c46-4697-83da-7cfe7ac1c32d
+            region: second
+            configuration:
+              id: 'views_block:holovna_novyny-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: null
+            weight: 0
+            additional: {  }
+          cedbe484-5a01-4d92-8d79-2eea6f38bc18:
+            uuid: cedbe484-5a01-4d92-8d79-2eea6f38bc18
+            region: first
+            configuration:
+              id: 'views_block:odna_novyna-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: null
+            weight: 10
+            additional:
+              ui_styles_wrapper: {  }
+              ui_styles_wrapper_extra: ''
+              ui_styles_title: {  }
+              ui_styles_title_extra: ''
+              ui_styles: {  }
+              ui_styles_extra: ''
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          64e29122-4358-4808-98f2-17355314256f:
+            uuid: 64e29122-4358-4808-98f2-17355314256f
+            region: content
+            configuration:
+              id: 'views_block:mozhlyvo_zatsikavyt-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: null
+            weight: 0
+            additional:
+              ui_styles_wrapper: {  }
+              ui_styles_wrapper_extra: ''
+              ui_styles_title: {  }
+              ui_styles_title_extra: ''
+              ui_styles: {  }
+              ui_styles_extra: ''
+        third_party_settings: {  }
 id: node.novyna.default
 targetEntityType: node
 bundle: novyna
 mode: default
 content:
+  field_holovna_novyna:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 107
+    region: content
   field_holovne_zobrazhennya:
     type: image
     label: above
@@ -52,6 +141,14 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
+  field_stiker:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
   field_teg_y_novyn:
     type: entity_reference_label
     label: above
@@ -60,12 +157,15 @@ content:
     third_party_settings: {  }
     weight: 106
     region: content
-  field_zaholovok:
-    type: text_default
+  field_vidobrazhaty_foto_v_prevyu:
+    type: boolean
     label: above
-    settings: {  }
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 108
     region: content
   links:
     settings: {  }
@@ -74,3 +174,4 @@ content:
     region: content
 hidden:
   langcode: true
+  layout_builder__layout: true

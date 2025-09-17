@@ -1,0 +1,25 @@
+uuid: 07a620af-4b95-493d-a08e-3574313dd992
+langcode: uk
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:54a3c12f-3788-4203-a86f-fde0ec7b7ead'
+  module:
+    - block_content
+  theme:
+    - vsn_theme
+id: vsn_theme_poshuknovin
+theme: vsn_theme
+region: header_search
+weight: 0
+provider: null
+plugin: 'block_content:54a3c12f-3788-4203-a86f-fde0ec7b7ead'
+settings:
+  id: 'block_content:54a3c12f-3788-4203-a86f-fde0ec7b7ead'
+  label: 'Пошук новин'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

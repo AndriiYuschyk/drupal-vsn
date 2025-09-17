@@ -1,6 +1,6 @@
 uuid: 3988766d-f076-4c82-bc3c-5c7feb53a578
 langcode: uk
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -307,7 +307,7 @@ display:
         type: views_query
         options: {  }
       display_extenders: {  }
-      path: taxonomy/term/%
+      path: taxonomy/old/term/%
     cache_metadata:
       max-age: -1
       contexts:

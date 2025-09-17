@@ -1,0 +1,9 @@
+uuid: 251938ae-7b18-4afd-ac76-f6233ae7bbc6
+langcode: uk
+status: true
+dependencies: {  }
+name: 'Стікер новин'
+vid: stiker
+description: 'Відображає позначку смісту, що міститься в новині'
+weight: 0
+new_revision: false
