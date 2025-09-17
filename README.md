@@ -26,7 +26,7 @@
 
 ## Структура проєкту
 ```angular2html
-drupal-project/
+drupal-vsn/
 ├── config/                 # Збережена конфігурація Drupal
 ├── docker/
 │   └── drupal/
