@@ -8,6 +8,4 @@ RUN cd /opt/drupal/ \
     && composer require drupal/colorbox \
     && composer require drupal/views_infinite_scroll \
     && composer require drupal/token \
-    && composer require drupal/token drupal/pathauto \
-    && composer clear-cache \
-    && drush cache:rebuild
+    && composer require drupal/token drupal/pathauto
