@@ -10,7 +10,7 @@ services:
       - ./web/custom/themes:/opt/drupal/web/themes/custom
       - ./web/libraries/colorbox:/opt/drupal/web/libraries/colorbox
       - ./web/sites/default/settings.php:/var/www/html/sites/default/settings.php
-      - ./web/sites/default/files:/var/www/html/sites/default/files # Медіа файли, щоб не був пустий сайт
+      - ./web/sites/files:/var/www/html/sites/default/files # Медіа файли, щоб не був пустий сайт
     environment:
       DRUPAL_DATABASE_HOST: database
       DRUPAL_DATABASE_NAME: drupal
