@@ -65,9 +65,11 @@ docker-compose ps
 ```
 4. Відновлення дампу бази даних за допомогою команди, або через phpmyadmin за допомогою файлу DB_DUMP/drupal.sql:
 ```angular2html
-docker cp DB_DUMP/drupal.sql drupal_main:/tmp/
+docker cp DB_DUMP/drupal.sql $(docker-compose ps -q database):/tmp/drupal.sql
 
-docker-compose exec database mysql -u drupaluser -pdrupalpassword drupal < /tmp/drupal.sql
+docker-compose exec database mysql -u drupaluser -pdrupalpassword -e "DROP DATABASE IF EXISTS drupal; CREATE DATABASE drupal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
+docker-compose exec database mysql -u drupaluser -pdrupalpassword drupal -e "source /tmp/drupal.sql"
 ```
 5. Імпорт конфігурації
 ```angular2html
