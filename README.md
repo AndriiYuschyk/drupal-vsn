@@ -24,6 +24,9 @@
 ## Кастомні теми
 - **VSN Theme** - За основу/клона було взято сайт [Волинської Служби Новин](https://vsn.ua/)
 
+## Результат
+- [https://andrii-project.org.ua/](https://andrii-project.org.ua)
+
 ## Структура проєкту
 ```angular2html
 drupal-vsn/
@@ -72,7 +75,11 @@ chmod +x scripts/import-config.sh
 
 scripts/import-config.sh
 ```
-6. Доступ до сайту
+6. Очистіть кеш в контейнері drupal
+```angular2html
+docker-compose exec drupal drush cache:rebuild
+```
+7. Доступ до сайту
 - Сайт: http://localhost:8080
 - Адмінка: http://localhost:8080/user/login
 - phpMyAdmin: http://localhost:8081

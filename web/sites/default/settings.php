@@ -848,21 +848,24 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'drupal',
-  'username' => 'drupaluser',
-  'password' => 'drupalpassword',
-  'prefix' => '',
-  'host' => 'database',
-  'port' => '3306',
-  'isolation_level' => 'READ COMMITTED',
-  'driver' => 'mysql',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+    'host' => 'database',
+    'database' => 'drupal',
+    'username' => 'drupaluser',
+    'password' => 'drupalpassword',
+    'port' => '3306',
+    'prefix' => '',
+    'isolation_level' => 'READ COMMITTED',
+    'driver' => 'mysql',
+    'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+    'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
+
 $settings['config_sync_directory'] = 'sites/default/files/config_TEteL_hdOWY6LgvdQzTSy_Rw7K9TnyCu2Y0Z_4hWFEqGtkKT3MCWqKIt8HnzDtFECTKXrn-3EQ/sync';
 $settings['config_sync_directory'] = '/var/www/html/config/sync';
 
 $settings['trusted_host_patterns'] = [
+    '^andrii-project\.org\.ua$',
+    '^www\.andrii-project\.org\.ua$',
     '^localhost$',
     '^localhost:8080$',
     '^127\.0\.0\.1$',
