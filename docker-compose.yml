@@ -46,13 +46,6 @@ services:
     networks:
       - drupal-network
 
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - "8025:8025"  # http://localhost:8025
-    networks:
-      - drupal-network
-
 networks:
   drupal-network:
     driver: bridge

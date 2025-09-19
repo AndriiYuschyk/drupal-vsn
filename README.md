@@ -87,7 +87,6 @@ docker-compose exec drupal drush cache:rebuild
 - Сайт: http://localhost:8080
 - Адмінка: http://localhost:8080/user/login
 - phpMyAdmin: http://localhost:8081
-- MailHog: http://localhost:8025
 
 ### Корисні команди
 - Очищення кешу Drupal
