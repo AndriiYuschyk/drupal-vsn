@@ -579,7 +579,7 @@ display:
       use_more_always: true
       use_more_text: 'Більше новин'
       link_display: custom_url
-      link_url: '/news?page=2'
+      link_url: '/news?page=1'
       header: {  }
       footer: {  }
       display_extenders: {  }
