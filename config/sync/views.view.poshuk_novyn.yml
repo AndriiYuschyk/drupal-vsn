@@ -525,6 +525,8 @@ display:
               secondary_label: 'Розширені параметри'
               secondary_open: false
               reset_button_always_show: false
+              autosubmit_breakpoint: ''
+              auto_submit_sort_only: false
             filter:
               combine:
                 plugin_id: default
@@ -534,6 +536,8 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                   hide_label: false
+                  field_classes: ''
+                  open_by_default: false
       access:
         type: perm
         options:
